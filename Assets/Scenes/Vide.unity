@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 121329077}
   - component: {fileID: 121329076}
-  - component: {fileID: 121329078}
   - component: {fileID: 121329079}
   - component: {fileID: 121329081}
   - component: {fileID: 121329082}
@@ -213,19 +212,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &121329078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 121329075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e80eb1c130d574e43be5322acd9c5066, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
 --- !u!114 &121329079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,7 +240,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.5
+  m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 24fdadbc5917e85419a1b1972d0d3a93, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -262,9 +248,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &121329082
 BoxCollider2D:
@@ -340,10 +326,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 121329075}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3fab67cdffc5fe40ac9d7dd4b97ee78, type: 3}
+  m_Script: {fileID: 11500000, guid: e28d71c31a9f20c48a0185f65b240786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 2071833022}
+  maxSpeed: 5
+  acceleration: 20
+  deacceleration: 4
+  jumpPower: 8
+  groundCheckDistance: 0.1
+  velocityX: 0
+  parallellstate: 1
+  state: 0
 --- !u!1 &378529680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,7 +1081,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.5
+  m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 24fdadbc5917e85419a1b1972d0d3a93, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1096,9 +1089,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &2071833024
 BoxCollider2D:
