@@ -11,13 +11,13 @@ public class CharacterMovement : MonoBehaviour
     bool onGround;
     float maxSpeed = 10;
 
-    public float jumpPower = 2;   
+    public float jumpPower = 6;   
 
     float groundCheckLength;
 
     Rigidbody2D rb2;
 
-    public float speed = 5;
+    public float speed = 100;
 
     // Start is called before the first frame update
     void Start()
