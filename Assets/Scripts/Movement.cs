@@ -1,6 +1,7 @@
 
 
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public enum PlayerState
 {
@@ -56,9 +57,10 @@ public class Movement : MonoBehaviour
     {
 
 
-        
+        MovementX();
 
-   
+
+
         RaycastHit2D hit;
         //onRoof = Physics2D.Raycast(transform.position, Vector2.up, 1);
         hit = Physics2D.Raycast(transform.position, new Vector2(0,up), 30);
@@ -124,7 +126,7 @@ public class Movement : MonoBehaviour
 
     public void MovementX()
     {
-
+        ;
 
         //Get the raw input
         float x = Input.GetAxisRaw("Horizontal");
