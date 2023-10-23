@@ -8,18 +8,27 @@ public class CharacterMovement : MonoBehaviour
     Vector3 velocity;
     Vector3 direction;
 
-    bool onGround;
-    float maxSpeed = 10;
+    bool onGround1;
+    bool onGround2;
+    bool onGround3;
 
-    public float jumpPower = 6;
+    [Header ("Speed")]
+    public float movingSpeed = 100;
+    public float maxSpeed = 10;
 
-    public float changeDirectionOnAir = 0.5f;
+    [Header("Jumping and Direction")]
+    public float changeDirectionOnAir = 0.1f;
+    public float jumpPower = 10;
+    public float jumpDown = 0.1f;
+
+    [Header("Jumping and Direction")]
+    public float fallGravity = 4;
+    public float jumpGravity = 1;
 
     float groundCheckLength;
 
     Rigidbody2D rb2;
 
-    public float speed = 100;
 
     // Start is called before the first frame update
     void Start()
@@ -49,13 +58,13 @@ public class CharacterMovement : MonoBehaviour
         
             direction.x = Input.GetAxisRaw("Horizontal");
 
-        if(!onGround)
+        if(!onGround1)
         {
             directionOnAir();
         }
 
 
-        velocity += speed * direction * Time.deltaTime;
+        velocity += movingSpeed * direction * Time.deltaTime;
 
         velocity.x = Mathf.Clamp(velocity.x, -maxSpeed, maxSpeed);
 
@@ -73,29 +82,37 @@ public class CharacterMovement : MonoBehaviour
 
     private void JumpingManagment()
     {
-        Debug.DrawRay(transform.position, Vector2.down * groundCheckLength, Color.red);
+        
 
-        if (Input.GetButtonDown("Jump") && onGround)
+        if (Input.GetButtonDown("Jump") && (onGround1 || onGround2 || onGround3))
         {
             rb2.velocity = new Vector2(velocity.x, jumpPower);
         }
-        if (Input.GetButtonUp("Jump") && onGround)
+        if (Input.GetButtonUp("Jump") && rb2.velocity.y > 0)
         {
-            rb2.velocity = new Vector2(rb2.velocity.x, rb2.velocity.y * 0.25f);
+            rb2.velocity = new Vector2(rb2.velocity.x, rb2.velocity.y * jumpDown);
         }
 
-        onGround = Physics2D.Raycast(transform.position, Vector2.down, groundCheckLength);
+        onGround1 = Physics2D.Raycast(transform.position, new Vector2(1,-1), groundCheckLength);
+        onGround2 = Physics2D.Raycast(transform.position, Vector2.down, groundCheckLength);
+        onGround3 = Physics2D.Raycast(transform.position, new Vector2(-1, -1), groundCheckLength);
+
+        Debug.DrawRay(transform.position, new Vector2(1, -1) * groundCheckLength, Color.green);
+        Debug.DrawRay(transform.position, Vector2.down * groundCheckLength, Color.red);
+        Debug.DrawRay(transform.position, new Vector2(-1, -1) * groundCheckLength, Color.blue);
+
+
+        // gravity
 
         if (rb2.velocity.y < 0)
         {
-            rb2.gravityScale = 4;
+            rb2.gravityScale = fallGravity;
         }
         if (rb2.velocity.y > 0)
         {
-            rb2.gravityScale = 1;
-
+            rb2.gravityScale = jumpGravity;
         }
 
-        Debug.Log(onGround);
+        
     }
 }
