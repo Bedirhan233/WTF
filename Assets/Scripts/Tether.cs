@@ -6,12 +6,13 @@ public class Tether : MonoBehaviour
 {
     public Transform Target;
     Rigidbody2D rb2d;
-    RelativeJoint2D joint2d;
+    DistanceJoint2D joint2d;
+    public int tetherDistance=3;
     // Start is called before the first frame update
     void Start()
     {
        rb2d= GetComponent<Rigidbody2D>();
-        joint2d = GetComponent<RelativeJoint2D>();
+        joint2d = GetComponent<DistanceJoint2D>();
     }
 
     // Update is called once per frame
@@ -19,11 +20,10 @@ public class Tether : MonoBehaviour
     {
         Vector3 distance = transform.position - Target.position;
         Debug.Log(distance.sqrMagnitude);
-        if (distance.sqrMagnitude>25)
+        if (distance.sqrMagnitude>tetherDistance*tetherDistance)
         {
             joint2d.enabled=true; 
-            distance.Normalize();
-            joint2d.linearOffset =distance*5 ;
+           
            
 
         }

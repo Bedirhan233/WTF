@@ -58,7 +58,7 @@ public class Movement : MonoBehaviour
 
         
 
-        MovementX();
+   
         RaycastHit2D hit;
         //onRoof = Physics2D.Raycast(transform.position, Vector2.up, 1);
         hit = Physics2D.Raycast(transform.position, new Vector2(0,up), 30);
@@ -122,14 +122,14 @@ public class Movement : MonoBehaviour
             
     }
 
-    private void MovementX()
+    public void MovementX()
     {
 
 
         //Get the raw input
         float x = Input.GetAxisRaw("Horizontal");
 
-
+            
 
 
         //add our input to our velocity
