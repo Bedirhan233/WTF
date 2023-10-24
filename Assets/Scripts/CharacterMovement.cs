@@ -5,11 +5,11 @@ using UnityEngine.InputSystem;
 
 public class CharacterMovement : MonoBehaviour
 {
-   
+    AnimationHandler animationHandler;
     Vector3 velocity;
     Vector3 direction;
 
-    Animator anim;
+  
    
     bool checkGround1;
     bool checkGround2;
@@ -44,8 +44,8 @@ public class CharacterMovement : MonoBehaviour
     }
     void Start()
     {
+        animationHandler = GetComponent<AnimationHandler>();    
         
-        anim = GetComponent<Animator>();
         Physics2D.queriesStartInColliders = false;
         rb2 = GetComponent<Rigidbody2D>();
 
@@ -57,6 +57,7 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        Debug.Log(animationHandler);
         CreatingRaycast();
         velocity += direction * movingSpeed * Time.deltaTime;
         rb2.velocity = new Vector2(velocity.x, rb2.velocity.y);
@@ -119,11 +120,11 @@ public class CharacterMovement : MonoBehaviour
     {
         if (velocity.x > 0 || velocity.x < 0)
         {
-            anim.SetBool("IsWalking", true);
+            animationHandler.smalCharacterWalking = true;
         }
         if (direction.x == 0)
         {
-            anim.SetBool("IsWalking", false);
+            animationHandler.smalCharacterWalking = false;
         }
 
         
