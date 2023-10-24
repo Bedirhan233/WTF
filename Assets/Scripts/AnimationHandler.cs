@@ -29,7 +29,7 @@ public class AnimationHandler : MonoBehaviour
     void SmalCharacterWalkingAnimation()
     {
 
-        Debug.Log("DET FUNKAR");
+       
 
         if(smalCharacterWalking) 
         { 
