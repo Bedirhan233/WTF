@@ -46,7 +46,7 @@ public class Tether : MonoBehaviour
             Magnet();
         }
         distance = transform.position - Target.position;
-        Debug.Log(distance.sqrMagnitude);
+        
         if (distance.sqrMagnitude > tetherDistance * tetherDistance)
         {
             joint2d.enabled = true;

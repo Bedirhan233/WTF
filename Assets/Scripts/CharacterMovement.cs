@@ -8,6 +8,8 @@ public class CharacterMovement : MonoBehaviour
    
     Vector3 velocity;
     Vector3 direction;
+
+    Animation animation;
    
     bool onGround1;
     bool onGround2;
@@ -40,6 +42,8 @@ public class CharacterMovement : MonoBehaviour
     }
     void Start()
     {
+
+        animation = GetComponent<Animation>();
         Physics2D.queriesStartInColliders = false;
         rb2 = GetComponent<Rigidbody2D>();
 
@@ -51,13 +55,12 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        
+        CreatingRaycast();
+
         Movement();
-        
-        
 
     }
+
 
     private void OnEnable()
     {
@@ -72,12 +75,22 @@ public class CharacterMovement : MonoBehaviour
         move.Disable();
         jump.Disable(); 
     }
+    private void CreatingRaycast()
+    {
+        onGround1 = Physics2D.Raycast(transform.position, new Vector2(1, -1), groundCheckLength);
+        onGround2 = Physics2D.Raycast(transform.position, Vector2.down, groundCheckLength);
+        onGround3 = Physics2D.Raycast(transform.position, new Vector2(-1, -1), groundCheckLength);
+
+        Debug.DrawRay(transform.position, new Vector2(1, -1) * groundCheckLength, Color.green);
+        Debug.DrawRay(transform.position, Vector2.down * groundCheckLength, Color.red);
+        Debug.DrawRay(transform.position, new Vector2(-1, -1) * groundCheckLength, Color.blue);
+    }
     private void Movement()
     {
 
         direction = move.ReadValue<Vector2>();
 
-        if (!onGround1)
+        if (!onGround1 || !onGround2 || !onGround3)
         {
             directionOnAir();
         }
@@ -97,11 +110,14 @@ public class CharacterMovement : MonoBehaviour
     private void directionOnAir()
     {
         direction.x *= changeDirectionOnAir;
+        
     }
 
     private void JumpingManagement(InputAction.CallbackContext context)
     {
-          
+
+        
+
 
         if ( (onGround1 || onGround2 || onGround3))
         {
@@ -112,13 +128,7 @@ public class CharacterMovement : MonoBehaviour
             rb2.velocity = new Vector2(rb2.velocity.x, rb2.velocity.y * jumpDown);
         }
 
-        onGround1 = Physics2D.Raycast(transform.position, new Vector2(1,-1), groundCheckLength);
-        onGround2 = Physics2D.Raycast(transform.position, Vector2.down, groundCheckLength);
-        onGround3 = Physics2D.Raycast(transform.position, new Vector2(-1, -1), groundCheckLength);
-
-        Debug.DrawRay(transform.position, new Vector2(1, -1) * groundCheckLength, Color.green);
-        Debug.DrawRay(transform.position, Vector2.down * groundCheckLength, Color.red);
-        Debug.DrawRay(transform.position, new Vector2(-1, -1) * groundCheckLength, Color.blue);
+        
 
 
         // gravity
