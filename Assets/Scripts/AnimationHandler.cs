@@ -7,6 +7,8 @@ public class AnimationHandler : MonoBehaviour
     Animator animator;
 
     public bool smalCharacterWalking;
+    public bool isJumping;
+    public bool isFalling;
 
     bool smalCharacterJumping;
     bool smalCharacterFalling;
@@ -23,7 +25,10 @@ public class AnimationHandler : MonoBehaviour
     {
        
         SmalCharacterWalkingAnimation();
-        
+        SmalCharacterIsJumping();
+        SmalCharacterFalling();
+
+
     }
 
     void SmalCharacterWalkingAnimation()
@@ -39,6 +44,31 @@ public class AnimationHandler : MonoBehaviour
         if (!smalCharacterWalking)
         {
             animator.SetBool("IsWalking", false);
+        }
+    }
+
+    void SmalCharacterIsJumping()
+    {
+        if(isJumping) 
+        {
+        animator.SetBool("isJumping", true);
+        }
+
+        if (!isJumping)
+        {
+            animator.SetBool("isJumping", false);
+        }
+    }
+
+    void SmalCharacterFalling()
+    {
+        if(isFalling) 
+        {
+            animator.SetBool("isFalling", true);
+        }
+        if (!isFalling)
+        {
+            animator.SetBool("isFalling", false);
         }
     }
 }

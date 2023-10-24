@@ -312,6 +312,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smalCharacterWalking: 0
+  isJumping: 0
+  isFalling: 0
 --- !u!1001 &1574894486
 PrefabInstance:
   m_ObjectHideFlags: 0

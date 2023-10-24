@@ -57,7 +57,7 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log(animationHandler);
+        
         CreatingRaycast();
         velocity += direction * movingSpeed * Time.deltaTime;
         rb2.velocity = new Vector2(velocity.x, rb2.velocity.y);
@@ -141,16 +141,32 @@ public class CharacterMovement : MonoBehaviour
     {
 
         if(context.performed)
-
         { 
-        if (onGround)
-        {
-            rb2.velocity = new Vector2(velocity.x, jumpPower);
+            if (onGround)
+            {
+                rb2.velocity = new Vector2(velocity.x, jumpPower);
+            }
+            if (rb2.velocity.y > 0)
+            {
+                rb2.velocity = new Vector2(rb2.velocity.x, rb2.velocity.y * jumpDown);
+                Debug.Log("hoppar upp");
+                animationHandler.isFalling = false;
+                animationHandler.isJumping = true;
+
+            }
         }
-        if (rb2.velocity.y > 0)
+
+        if(rb2.velocity.y < 0)
         {
-            rb2.velocity = new Vector2(rb2.velocity.x, rb2.velocity.y * jumpDown);
+            animationHandler.isFalling = true;
+            animationHandler.isFalling = false;
+            Debug.Log("faller ner");
         }
+
+        if(!onGround)
+        {
+            animationHandler.isFalling = false;
+            animationHandler.isJumping = false;
         }
 
 
