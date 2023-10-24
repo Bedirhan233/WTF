@@ -9,11 +9,13 @@ public class CharacterMovement : MonoBehaviour
     Vector3 velocity;
     Vector3 direction;
 
-    Animation animation;
+    Animator anim;
    
-    bool onGround1;
-    bool onGround2;
-    bool onGround3;
+    bool checkGround1;
+    bool checkGround2;
+    bool checkGround3;
+
+    bool onGround;
 
     [Header ("Speed")]
     public float movingSpeed = 100;
@@ -43,7 +45,7 @@ public class CharacterMovement : MonoBehaviour
     void Start()
     {
 
-        animation = GetComponent<Animation>();
+        anim = GetComponent<Animator>();
         Physics2D.queriesStartInColliders = false;
         rb2 = GetComponent<Rigidbody2D>();
 
@@ -56,9 +58,7 @@ public class CharacterMovement : MonoBehaviour
     void Update()
     {
         CreatingRaycast();
-
         Movement();
-
     }
 
 
@@ -77,26 +77,42 @@ public class CharacterMovement : MonoBehaviour
     }
     private void CreatingRaycast()
     {
-        onGround1 = Physics2D.Raycast(transform.position, new Vector2(1, -1), groundCheckLength);
-        onGround2 = Physics2D.Raycast(transform.position, Vector2.down, groundCheckLength);
-        onGround3 = Physics2D.Raycast(transform.position, new Vector2(-1, -1), groundCheckLength);
+        checkGround1 = Physics2D.Raycast(transform.position, new Vector2(1, -1), groundCheckLength);
+        checkGround2 = Physics2D.Raycast(transform.position, Vector2.down, groundCheckLength);
+        checkGround3 = Physics2D.Raycast(transform.position, new Vector2(-1, -1), groundCheckLength);
 
         Debug.DrawRay(transform.position, new Vector2(1, -1) * groundCheckLength, Color.green);
         Debug.DrawRay(transform.position, Vector2.down * groundCheckLength, Color.red);
         Debug.DrawRay(transform.position, new Vector2(-1, -1) * groundCheckLength, Color.blue);
+
+        onGround = checkGround1 || checkGround2 || checkGround3;
     }
     private void Movement()
     {
+        WalkingAnimationHandler();
 
         direction = move.ReadValue<Vector2>();
 
-        if (!onGround1 || !onGround2 || !onGround3)
+        if (!onGround)
         {
             directionOnAir();
         }
 
-
+        Debug.Log(velocity.x);
         velocity += movingSpeed * direction * Time.deltaTime;
+        rb2.velocity = new Vector2(velocity.x, rb2.velocity.y);
+    }
+
+    private void WalkingAnimationHandler()
+    {
+        if (velocity.x > 0 || velocity.x < 0)
+        {
+            anim.SetBool("IsWalking", true);
+        }
+        if (velocity.x == 0)
+        {
+            anim.SetBool("IsWalking", false);
+        }
 
         velocity.x = Mathf.Clamp(velocity.x, -maxSpeed, maxSpeed);
 
@@ -104,7 +120,6 @@ public class CharacterMovement : MonoBehaviour
         {
             velocity.x *= 0;
         }
-        rb2.velocity = new Vector2(velocity.x, rb2.velocity.y);
     }
 
     private void directionOnAir()
@@ -119,7 +134,7 @@ public class CharacterMovement : MonoBehaviour
         
 
 
-        if ( (onGround1 || onGround2 || onGround3))
+        if (onGround)
         {
             rb2.velocity = new Vector2(velocity.x, jumpPower);
         }
