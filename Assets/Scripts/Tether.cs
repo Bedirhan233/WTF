@@ -17,7 +17,7 @@ public class Tether : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         joint2d = GetComponent<DistanceJoint2D>();
     }
-
+        
     void Magnet()
     {
 
@@ -45,17 +45,17 @@ public class Tether : MonoBehaviour
         {
             Magnet();
         }
-        distance = transform.position - Target.position;
+        //distance = transform.position - Target.position;
         
-        if (distance.sqrMagnitude > tetherDistance * tetherDistance)
-        {
-            joint2d.enabled = true;
+        //if (distance.sqrMagnitude > tetherDistance * tetherDistance)
+        //{
+        //    joint2d.enabled = true;
 
 
 
-        }
-        else
-            joint2d.enabled = false;
+        //}
+        //else
+        //    joint2d.enabled = false;
     }
 
 }
