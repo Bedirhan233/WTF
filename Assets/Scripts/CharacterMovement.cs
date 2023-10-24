@@ -37,14 +37,14 @@ public class CharacterMovement : MonoBehaviour
     public PlayerControls playerControls;
     private InputAction move;
     private InputAction jump;
-
+    public InputControlScheme ActiveControlScheme;
     private void Awake()
     {
         playerControls= new PlayerControls();
     }
     void Start()
     {
-
+        
         anim = GetComponent<Animator>();
         Physics2D.queriesStartInColliders = false;
         rb2 = GetComponent<Rigidbody2D>();
@@ -55,10 +55,26 @@ public class CharacterMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         CreatingRaycast();
-        Movement();
+        velocity += direction * movingSpeed * Time.deltaTime;
+        rb2.velocity = new Vector2(velocity.x, rb2.velocity.y);
+        velocity.x = Mathf.Clamp(velocity.x, -maxSpeed, maxSpeed);
+        if(velocity.x > 0)
+        {
+            WalkingAnimationHandler();
+        }
+        if (direction.x == 0 || (direction.x < 0 == velocity.x > 0))
+        {
+            velocity.x *= 0;
+        }
+        if (!onGround)
+        {
+            DirectionOnAir();
+        }
+      
+        //Movement();
     }
 
 
@@ -68,7 +84,7 @@ public class CharacterMovement : MonoBehaviour
         jump = playerControls.Player.Jump;
         move.Enable();
         jump.Enable();
-        jump.performed += JumpingManagement;
+        //jump.performed += JumpingManagement;
     }
     private void OnDisable()
     {
@@ -87,20 +103,16 @@ public class CharacterMovement : MonoBehaviour
 
         onGround = checkGround1 || checkGround2 || checkGround3;
     }
-    private void Movement()
+    public void Movement(InputAction.CallbackContext context)
     {
-        WalkingAnimationHandler();
+        
+       
+        direction = context.ReadValue<Vector2>();
 
-        direction = move.ReadValue<Vector2>();
-
-        if (!onGround)
-        {
-            directionOnAir();
-        }
+       
 
         Debug.Log(velocity.x);
-        velocity += movingSpeed * direction * Time.deltaTime;
-        rb2.velocity = new Vector2(velocity.x, rb2.velocity.y);
+   
     }
 
     private void WalkingAnimationHandler()
@@ -109,31 +121,27 @@ public class CharacterMovement : MonoBehaviour
         {
             anim.SetBool("IsWalking", true);
         }
-        if (velocity.x == 0)
+        if (direction.x == 0)
         {
             anim.SetBool("IsWalking", false);
         }
 
-        velocity.x = Mathf.Clamp(velocity.x, -maxSpeed, maxSpeed);
+        
 
-        if (direction.x == 0 || (direction.x < 0 == velocity.x > 0))
-        {
-            velocity.x *= 0;
-        }
     }
 
-    private void directionOnAir()
+    private void DirectionOnAir()
     {
         direction.x *= changeDirectionOnAir;
         
     }
 
-    private void JumpingManagement(InputAction.CallbackContext context)
+    public void JumpingManagement(InputAction.CallbackContext context)
     {
 
-        
+        if(context.performed)
 
-
+        { 
         if (onGround)
         {
             rb2.velocity = new Vector2(velocity.x, jumpPower);
@@ -142,8 +150,8 @@ public class CharacterMovement : MonoBehaviour
         {
             rb2.velocity = new Vector2(rb2.velocity.x, rb2.velocity.y * jumpDown);
         }
+        }
 
-        
 
 
         // gravity
