@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CharacterMovement : MonoBehaviour
 {
-
+   
     Vector3 velocity;
     Vector3 direction;
-
+   
     bool onGround1;
     bool onGround2;
     bool onGround3;
@@ -29,8 +30,14 @@ public class CharacterMovement : MonoBehaviour
 
     Rigidbody2D rb2;
 
+    public PlayerControls playerControls;
+    private InputAction move;
+    private InputAction jump;
 
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        playerControls= new PlayerControls();
+    }
     void Start()
     {
         Physics2D.queriesStartInColliders = false;
@@ -48,17 +55,29 @@ public class CharacterMovement : MonoBehaviour
         
         Movement();
         
-        JumpingManagment();
+        
 
     }
 
-
+    private void OnEnable()
+    {
+        move = playerControls.Player.Move;
+        jump = playerControls.Player.Jump;
+        move.Enable();
+        jump.Enable();
+        jump.performed += JumpingManagement;
+    }
+    private void OnDisable()
+    {
+        move.Disable();
+        jump.Disable(); 
+    }
     private void Movement()
     {
-        
-            direction.x = Input.GetAxisRaw("Horizontal");
 
-        if(!onGround1)
+        direction = move.ReadValue<Vector2>();
+
+        if (!onGround1)
         {
             directionOnAir();
         }
@@ -77,18 +96,18 @@ public class CharacterMovement : MonoBehaviour
 
     private void directionOnAir()
     {
-        direction.x = Input.GetAxisRaw("Horizontal") * changeDirectionOnAir;
+        direction.x *= changeDirectionOnAir;
     }
 
-    private void JumpingManagment()
+    private void JumpingManagement(InputAction.CallbackContext context)
     {
-        
+          
 
-        if (Input.GetButtonDown("Jump") && (onGround1 || onGround2 || onGround3))
+        if ( (onGround1 || onGround2 || onGround3))
         {
             rb2.velocity = new Vector2(velocity.x, jumpPower);
         }
-        if (Input.GetButtonUp("Jump") && rb2.velocity.y > 0)
+        if (rb2.velocity.y > 0)
         {
             rb2.velocity = new Vector2(rb2.velocity.x, rb2.velocity.y * jumpDown);
         }

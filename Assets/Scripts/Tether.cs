@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Tether : MonoBehaviour
@@ -7,28 +8,54 @@ public class Tether : MonoBehaviour
     public Transform Target;
     Rigidbody2D rb2d;
     DistanceJoint2D joint2d;
-    public int tetherDistance=3;
+    public int tetherDistance = 3;
+    bool magnet;
+    Vector3 distance;
     // Start is called before the first frame update
     void Start()
     {
-       rb2d= GetComponent<Rigidbody2D>();
+        rb2d = GetComponent<Rigidbody2D>();
         joint2d = GetComponent<DistanceJoint2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void Magnet()
     {
-        Vector3 distance = transform.position - Target.position;
-        Debug.Log(distance.sqrMagnitude);
-        if (distance.sqrMagnitude>tetherDistance*tetherDistance)
+
+        switch (magnet)
         {
-            joint2d.enabled=true; 
-           
-           
+            case true:
+                while (distance.sqrMagnitude > 0)
+                {
+                    joint2d.enabled = true;
+                    joint2d.distance = 0;
+
+                }
+                break;
+
+            case false:
+                joint2d.enabled = false;
+                break;
 
         }
-        else 
+        magnet = !magnet;
+    }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            Magnet();
+        }
+        distance = transform.position - Target.position;
+        Debug.Log(distance.sqrMagnitude);
+        if (distance.sqrMagnitude > tetherDistance * tetherDistance)
+        {
+            joint2d.enabled = true;
+
+
+
+        }
+        else
             joint2d.enabled = false;
     }
-    
+
 }
