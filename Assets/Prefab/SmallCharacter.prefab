@@ -55,6 +55,7 @@ MonoBehaviour:
   smalCharacterWalking: 0
   isJumping: 0
   isFalling: 0
+  bigCharacterWalking: 0
 --- !u!212 &6124815097858793766
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -121,6 +122,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
   tetherDistance: 5
+  Forcefield: {fileID: 0}
+  ForcefieldSprite: {fileID: 0}
 --- !u!50 &417128776132569703
 Rigidbody2D:
   serializedVersion: 4

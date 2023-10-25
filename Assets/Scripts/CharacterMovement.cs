@@ -116,7 +116,6 @@ public class CharacterMovement : MonoBehaviour
     {
         direction = context.ReadValue<Vector2>();
 
-        Debug.Log(velocity.x);
     }
 
     private void AnimationHandler()
@@ -126,6 +125,7 @@ public class CharacterMovement : MonoBehaviour
         if (velocity.x > 0)
         {
             animationHandler.smalCharacterWalking = true;
+            animationHandler.bigCharacterWalking = true;
             spriteRenderer.flipX = false;
 
         }
@@ -135,13 +135,15 @@ public class CharacterMovement : MonoBehaviour
         if (velocity.x < 0)
         {
             animationHandler.smalCharacterWalking = true;
+            animationHandler.bigCharacterWalking = true;
             spriteRenderer.flipX = true;
         }
 
         // står still
         if (direction.x == 0)
         {
-            animationHandler.smalCharacterWalking = false;  
+            animationHandler.smalCharacterWalking = false;
+            animationHandler.bigCharacterWalking = false;
         }
 
         // hoppar upp
@@ -196,16 +198,11 @@ public class CharacterMovement : MonoBehaviour
             {
                 rb2.velocity = new Vector2(velocity.x, jumpPower);
             }
-            Debug.Log("DEn hoppar");
+
+            Debug.Log("Jump");
+            
+
            
         }
-
-        
-
-
-
-       
-
-        
     }
 }
