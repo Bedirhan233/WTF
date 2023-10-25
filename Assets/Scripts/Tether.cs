@@ -18,7 +18,7 @@ public class Tether : MonoBehaviour
     void Start()
     {
         
-        Target = GameObject.FindGameObjectWithTag("BigGuy");
+        Target = GameObject.FindGameObjectWithTag("SmalGuy");
         
         targetRb2d=Target.GetComponent<Rigidbody2D>();
         rb2d = GetComponent<Rigidbody2D>();
@@ -28,7 +28,7 @@ public class Tether : MonoBehaviour
         
         //Instantiate(Forcefield, Forcefield.transform.position,Quaternion.identity );
         ForcefieldSprite=Forcefield.GetComponent<SpriteRenderer>();
-        ForcefieldSprite.enabled = true;
+        //ForcefieldSprite.enabled = false;
     }
 
     //void Magnet()

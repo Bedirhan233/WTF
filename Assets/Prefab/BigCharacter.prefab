@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 1975229583125552271}
   - component: {fileID: 2903836607806354788}
   - component: {fileID: 3493714585827180827}
+  - component: {fileID: 8643789935325319022}
+  - component: {fileID: 727244488100857938}
   m_Layer: 0
   m_Name: BigCharacter
   m_TagString: BigGuy
@@ -106,7 +108,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 24fdadbc5917e85419a1b1972d0d3a93, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -322,3 +324,37 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &8643789935325319022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8610488033151329511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3fab67cdffc5fe40ac9d7dd4b97ee78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tetherDistance: 5
+  Forcefield: {fileID: 1055131446993411773, guid: b404c054e30ee4a499e9f8aa7f3582c3, type: 3}
+--- !u!232 &727244488100857938
+DistanceJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8610488033151329511}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 417128776132569703, guid: 81d2b06ca935f1942909f9eeca8125a9, type: 3}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_BreakAction: 3
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 0
+  m_Distance: 5
+  m_MaxDistanceOnly: 1
