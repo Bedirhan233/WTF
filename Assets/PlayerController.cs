@@ -16,16 +16,31 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.J))
         {
-            OnPlayerJoined();
+            OnPlayerJoined(0);
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            OnPlayerJoined(1);
         }
     }
-    public void OnPlayerJoined()
+    public void OnPlayerJoined(int Control)
     {
         i++;
           //  inputManager.playerPrefab = playerPrefabB;
         if(i==1)
         { 
-        var player1 = PlayerInput.Instantiate(playerA, controlScheme: "Small", pairWithDevice: Keyboard.current);
+            if(Control == 0)
+            {
+                var Device = Keyboard.current;
+                var player1 = PlayerInput.Instantiate(playerA, controlScheme: "Small", pairWithDevice: Device);
+            }
+            if (Control == 1)
+            {
+                var Device = Gamepad.current;
+                var player1 = PlayerInput.Instantiate(playerA, controlScheme: "Gamepad", pairWithDevice: Device);
+            }
+            
+        
         }
       
         if (i==2)

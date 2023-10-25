@@ -9,7 +9,7 @@ public class CharacterMovement : MonoBehaviour
     Vector3 velocity;
     Vector3 direction;
 
-    public AudioManager audioManager;
+    //public AudioManager audioManager;
 
     SpriteRenderer spriteRenderer;
   
@@ -138,7 +138,7 @@ public class CharacterMovement : MonoBehaviour
             animationHandler.smalCharacterWalking = true;
             animationHandler.bigCharacterWalking = true;
             spriteRenderer.flipX = false;
-            audioManager.BigGuyWalkingSound();
+            //audioManager.BigGuyWalkingSound();
 
         }
 
@@ -149,7 +149,7 @@ public class CharacterMovement : MonoBehaviour
             animationHandler.smalCharacterWalking = true;
             animationHandler.bigCharacterWalking = true;
             spriteRenderer.flipX = true;
-            audioManager.BigGuyWalkingSound();
+           // audioManager.BigGuyWalkingSound();
 
         }
 
@@ -217,13 +217,13 @@ public class CharacterMovement : MonoBehaviour
 
             if(gameObject.tag == "SmalGuy" && onGround)
             {
-            audioManager.SmalGuyJumpingSound();
+           // audioManager.SmalGuyJumpingSound();
 
             }
 
             if(gameObject.tag == "BigGuy" && onGround)
             {
-                audioManager.BigGuyJumpingSound();
+                //audioManager.BigGuyJumpingSound();
                 
             }
 

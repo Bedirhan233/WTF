@@ -5,7 +5,7 @@ using UnityEngine;
 public class AnimationHandler : MonoBehaviour
 {
     Animator animator;
-    public AudioManager audioManager;
+   // public AudioManager audioManager;
 
     public bool smalCharacterWalking;
     public bool isJumping;
