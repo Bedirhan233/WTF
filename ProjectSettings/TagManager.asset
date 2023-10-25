@@ -7,6 +7,7 @@ TagManager:
   - SmalGuy
   - BigGuy
   - Forcefield
+  - Rock
   layers:
   - Default
   - TransparentFX
