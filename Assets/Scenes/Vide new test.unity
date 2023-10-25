@@ -393,6 +393,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &452327480 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1055131446993411773, guid: b404c054e30ee4a499e9f8aa7f3582c3, type: 3}
+  m_PrefabInstance: {fileID: 4542202040989518198}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &452327482 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 165992069552998698, guid: b404c054e30ee4a499e9f8aa7f3582c3, type: 3}
+  m_PrefabInstance: {fileID: 4542202040989518198}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &596830383
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,6 +811,14 @@ PrefabInstance:
       propertyPath: Target
       value: 
       objectReference: {fileID: 38177164}
+    - target: {fileID: 2070027401070904243, guid: 81d2b06ca935f1942909f9eeca8125a9, type: 3}
+      propertyPath: Forcefield
+      value: 
+      objectReference: {fileID: 452327480}
+    - target: {fileID: 2070027401070904243, guid: 81d2b06ca935f1942909f9eeca8125a9, type: 3}
+      propertyPath: ForcefieldSprite
+      value: 
+      objectReference: {fileID: 452327482}
     - target: {fileID: 2538126775479731861, guid: 81d2b06ca935f1942909f9eeca8125a9, type: 3}
       propertyPath: jumpPower
       value: 20
@@ -822,26 +840,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2903836607806354788, guid: 4122c15066c56644aad5e8be7e966e68, type: 3}
-      propertyPath: jumpDown
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2903836607806354788, guid: 4122c15066c56644aad5e8be7e966e68, type: 3}
-      propertyPath: maxSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2903836607806354788, guid: 4122c15066c56644aad5e8be7e966e68, type: 3}
-      propertyPath: jumpPower
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2903836607806354788, guid: 4122c15066c56644aad5e8be7e966e68, type: 3}
-      propertyPath: movingSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2903836607806354788, guid: 4122c15066c56644aad5e8be7e966e68, type: 3}
-      propertyPath: changeDirectionOnAir
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 7487774127435028033, guid: 4122c15066c56644aad5e8be7e966e68, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.53
@@ -891,6 +889,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4122c15066c56644aad5e8be7e966e68, type: 3}
+--- !u!1001 &4542202040989518198
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 556274290733909693, guid: b404c054e30ee4a499e9f8aa7f3582c3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 556274290733909693, guid: b404c054e30ee4a499e9f8aa7f3582c3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 556274290733909693, guid: b404c054e30ee4a499e9f8aa7f3582c3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 556274290733909693, guid: b404c054e30ee4a499e9f8aa7f3582c3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 556274290733909693, guid: b404c054e30ee4a499e9f8aa7f3582c3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 556274290733909693, guid: b404c054e30ee4a499e9f8aa7f3582c3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 556274290733909693, guid: b404c054e30ee4a499e9f8aa7f3582c3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 556274290733909693, guid: b404c054e30ee4a499e9f8aa7f3582c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 556274290733909693, guid: b404c054e30ee4a499e9f8aa7f3582c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 556274290733909693, guid: b404c054e30ee4a499e9f8aa7f3582c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055131446993411773, guid: b404c054e30ee4a499e9f8aa7f3582c3, type: 3}
+      propertyPath: m_Name
+      value: Forcefield
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b404c054e30ee4a499e9f8aa7f3582c3, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -900,5 +955,6 @@ SceneRoots:
   - {fileID: 615529209}
   - {fileID: 596830386}
   - {fileID: 137627636}
+  - {fileID: 4542202040989518198}
   - {fileID: 934954633}
   - {fileID: 1460624399}
