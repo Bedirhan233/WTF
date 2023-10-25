@@ -9,6 +9,7 @@ public class CharacterMovement : MonoBehaviour
     Vector3 velocity;
     Vector3 direction;
 
+    SpriteRenderer spriteRenderer;
   
    
     bool checkGround1;
@@ -52,20 +53,22 @@ public class CharacterMovement : MonoBehaviour
         var collider = GetComponent<Collider2D>();
 
         groundCheckLength = collider.bounds.size.y + 0.1f;
+
+        spriteRenderer = GetComponent<SpriteRenderer>();    
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log(animationHandler);
+        
         CreatingRaycast();
+
         velocity += direction * movingSpeed * Time.deltaTime;
         rb2.velocity = new Vector2(velocity.x, rb2.velocity.y);
         velocity.x = Mathf.Clamp(velocity.x, -maxSpeed, maxSpeed);
-        if(velocity.x > 0)
-        {
+
             WalkingAnimationHandler();
-        }
+        
         if (direction.x == 0 || (direction.x < 0 == velocity.x > 0))
         {
             velocity.x *= 0;
@@ -106,28 +109,71 @@ public class CharacterMovement : MonoBehaviour
     }
     public void Movement(InputAction.CallbackContext context)
     {
-        
-       
         direction = context.ReadValue<Vector2>();
 
-       
-
         Debug.Log(velocity.x);
-   
     }
 
     private void WalkingAnimationHandler()
     {
-        if (velocity.x > 0 || velocity.x < 0)
+
+        // går åt vänster
+        if (velocity.x > 0)
         {
             animationHandler.smalCharacterWalking = true;
-        }
-        if (direction.x == 0)
-        {
-            animationHandler.smalCharacterWalking = false;
+            spriteRenderer.flipX = false;
+
         }
 
-        
+
+        //går åt höger
+
+        if (velocity.x < 0)
+        {
+            animationHandler.smalCharacterWalking = true;
+            spriteRenderer.flipX = true;
+        }
+
+        // står still
+        if (direction.x == 0)
+        {
+            animationHandler.smalCharacterWalking = false;  
+        }
+
+        // hoppar upp
+
+        if (rb2.velocity.y > 0)
+        {
+            rb2.velocity = new Vector2(rb2.velocity.x, rb2.velocity.y * jumpDown);
+            animationHandler.isFalling = false;
+            animationHandler.isJumping = true;
+        }
+
+        // faller ner
+
+        if (rb2.velocity.y < 0)
+        {
+            animationHandler.isFalling = true;
+            animationHandler.isJumping = false;
+        }
+
+        // på marken
+        if (onGround)
+        {
+            animationHandler.isFalling = false;
+            animationHandler.isJumping = false;
+        }
+        // gravity
+        if (rb2.velocity.y < 0)
+        {
+            rb2.gravityScale = fallGravity;
+        }
+        if (rb2.velocity.y > 0)
+        {
+            rb2.gravityScale = jumpGravity;
+        }
+
+
 
     }
 
@@ -140,31 +186,20 @@ public class CharacterMovement : MonoBehaviour
     public void JumpingManagement(InputAction.CallbackContext context)
     {
 
-        if(context.performed)
-
+        if(context.started)
         { 
-        if (onGround)
-        {
-            rb2.velocity = new Vector2(velocity.x, jumpPower);
+            if (onGround)
+            {
+                rb2.velocity = new Vector2(velocity.x, jumpPower);
+            }
+           
         }
-        if (rb2.velocity.y > 0)
-        {
-            rb2.velocity = new Vector2(rb2.velocity.x, rb2.velocity.y * jumpDown);
-        }
-        }
+
+        
 
 
 
-        // gravity
-
-        if (rb2.velocity.y < 0)
-        {
-            rb2.gravityScale = fallGravity;
-        }
-        if (rb2.velocity.y > 0)
-        {
-            rb2.gravityScale = jumpGravity;
-        }
+       
 
         
     }
