@@ -302,7 +302,7 @@ TextureImporter:
       name: ground tiles_9
       rect:
         serializedVersion: 2
-        x: 128
+        x: 96
         y: 98
         width: 16
         height: 16
@@ -323,7 +323,7 @@ TextureImporter:
       name: ground tiles_10
       rect:
         serializedVersion: 2
-        x: 144
+        x: 112
         y: 98
         width: 16
         height: 16
@@ -344,8 +344,8 @@ TextureImporter:
       name: ground tiles_11
       rect:
         serializedVersion: 2
-        x: 0
-        y: 82
+        x: 128
+        y: 98
         width: 16
         height: 16
       alignment: 0
@@ -365,8 +365,8 @@ TextureImporter:
       name: ground tiles_12
       rect:
         serializedVersion: 2
-        x: 16
-        y: 82
+        x: 144
+        y: 98
         width: 16
         height: 16
       alignment: 0
@@ -386,7 +386,7 @@ TextureImporter:
       name: ground tiles_13
       rect:
         serializedVersion: 2
-        x: 32
+        x: 0
         y: 82
         width: 16
         height: 16
@@ -407,7 +407,7 @@ TextureImporter:
       name: ground tiles_14
       rect:
         serializedVersion: 2
-        x: 48
+        x: 16
         y: 82
         width: 16
         height: 16
@@ -428,7 +428,7 @@ TextureImporter:
       name: ground tiles_15
       rect:
         serializedVersion: 2
-        x: 64
+        x: 32
         y: 82
         width: 16
         height: 16
@@ -449,7 +449,7 @@ TextureImporter:
       name: ground tiles_16
       rect:
         serializedVersion: 2
-        x: 80
+        x: 48
         y: 82
         width: 16
         height: 16
@@ -470,8 +470,8 @@ TextureImporter:
       name: ground tiles_17
       rect:
         serializedVersion: 2
-        x: 0
-        y: 66
+        x: 64
+        y: 82
         width: 16
         height: 16
       alignment: 0
@@ -491,8 +491,8 @@ TextureImporter:
       name: ground tiles_18
       rect:
         serializedVersion: 2
-        x: 16
-        y: 66
+        x: 80
+        y: 82
         width: 16
         height: 16
       alignment: 0
@@ -512,7 +512,7 @@ TextureImporter:
       name: ground tiles_19
       rect:
         serializedVersion: 2
-        x: 32
+        x: 0
         y: 66
         width: 16
         height: 16
@@ -533,7 +533,7 @@ TextureImporter:
       name: ground tiles_20
       rect:
         serializedVersion: 2
-        x: 48
+        x: 16
         y: 66
         width: 16
         height: 16
@@ -554,7 +554,7 @@ TextureImporter:
       name: ground tiles_21
       rect:
         serializedVersion: 2
-        x: 64
+        x: 32
         y: 66
         width: 16
         height: 16
@@ -575,7 +575,7 @@ TextureImporter:
       name: ground tiles_22
       rect:
         serializedVersion: 2
-        x: 80
+        x: 48
         y: 66
         width: 16
         height: 16
@@ -588,6 +588,48 @@ TextureImporter:
       bones: []
       spriteID: f2b2192f45877de4c82db6537e8b4fb3
       internalID: 166245116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground tiles_23
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 66
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f62cba378e6b3a429439114955d78cd
+      internalID: 111894737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground tiles_24
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 66
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a8dab6e83d315f478c0d1935b0c6ef0
+      internalID: -3749457
       vertices: []
       indices: 
       edges: []
@@ -619,6 +661,8 @@ TextureImporter:
       ground tiles_20: -1313882869
       ground tiles_21: 615499999
       ground tiles_22: 166245116
+      ground tiles_23: 111894737
+      ground tiles_24: -3749457
       ground tiles_3: 732303538
       ground tiles_4: 992952664
       ground tiles_5: -1773785733
