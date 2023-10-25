@@ -11,6 +11,8 @@ public class Tether : MonoBehaviour
     public int tetherDistance = 3;
     bool magnet;
     Vector3 distance;
+    public GameObject Forcefield;
+    public SpriteRenderer ForcefieldSprite;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,10 +43,21 @@ public class Tether : MonoBehaviour
     }
     void Update()
     {
-        //if (Target - transform.position == joint2d.maxDistanceOnly)
-        //{
-
-        //}
+        distance=Target.position - transform.position;
+        Forcefield.transform.position =transform.position + distance/2;
+        
+        
+        if (distance.sqrMagnitude >= joint2d.distance*joint2d.distance-0.5f)
+        {
+            ForcefieldSprite.color = new Color(0.23529411764705882f, 0.788235294117647f, 0.8196078431372549f, 0.5411765f);
+            
+          //  -Forcefield.transform.right = transform.position;
+        }
+        else
+        {
+            ForcefieldSprite.color = new Color(0.23529411764705882f, 0.788235294117647f, 0.8196078431372549f,0.3f);
+        }
+        
         if (Input.GetKeyDown(KeyCode.M))
         {
             Magnet();
