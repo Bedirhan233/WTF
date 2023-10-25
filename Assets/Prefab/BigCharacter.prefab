@@ -185,6 +185,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smalCharacterWalking: 0
+  isJumping: 0
+  isFalling: 0
 --- !u!114 &2903836607806354788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,3 +206,7 @@ MonoBehaviour:
   jumpDown: 0.1
   fallGravity: 4
   jumpGravity: 1
+  ActiveControlScheme:
+    m_Name: 
+    m_BindingGroup: 
+    m_DeviceRequirements: []

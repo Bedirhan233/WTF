@@ -53,6 +53,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smalCharacterWalking: 0
+  isJumping: 0
+  isFalling: 0
 --- !u!212 &6124815097858793766
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -162,8 +164,8 @@ MonoBehaviour:
   maxSpeed: 5
   changeDirectionOnAir: 0.1
   jumpPower: 30
-  jumpDown: 0.2
-  fallGravity: 4
+  jumpDown: 1
+  fallGravity: 2
   jumpGravity: 1
   ActiveControlScheme:
     m_Name: 
