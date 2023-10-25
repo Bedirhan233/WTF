@@ -202,8 +202,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movingSpeed: 20
   maxSpeed: 5
-  changeDirectionOnAir: 0.1
-  jumpPower: 50
+  changeDirectionOnAir: 0.5
+  jumpPower: 10
   jumpDown: 1
   fallGravity: 4
   jumpGravity: 1
