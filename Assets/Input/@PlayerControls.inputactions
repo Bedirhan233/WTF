@@ -71,7 +71,7 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Small",
+                    "groups": ";Big",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -82,7 +82,7 @@
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Small",
+                    "groups": ";Big",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -93,7 +93,7 @@
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Small",
+                    "groups": ";Big",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -104,7 +104,7 @@
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Small",
+                    "groups": ";Big",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -148,7 +148,7 @@
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Big",
+                    "groups": "Small",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -159,7 +159,7 @@
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Big",
+                    "groups": "Small",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -170,7 +170,7 @@
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Big",
+                    "groups": "Small",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -181,7 +181,7 @@
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Big",
+                    "groups": "Small",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -203,7 +203,7 @@
                     "path": "<Pointer>/delta",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Small;Touch",
+                    "groups": ";Big;Touch",
                     "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -236,7 +236,7 @@
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Small",
+                    "groups": ";Big",
                     "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -280,7 +280,7 @@
                     "path": "<Keyboard>/numpad0",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Big",
+                    "groups": "Small",
                     "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -291,7 +291,7 @@
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Small",
+                    "groups": "Big",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -313,7 +313,7 @@
                     "path": "<Keyboard>/numpadEnter",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Big",
+                    "groups": "Small",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -598,7 +598,7 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Small",
+                    "groups": "Big",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -609,7 +609,7 @@
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Small",
+                    "groups": "Big",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -620,7 +620,7 @@
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Small",
+                    "groups": "Big",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -631,7 +631,7 @@
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Small",
+                    "groups": "Big",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -642,7 +642,7 @@
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Small",
+                    "groups": "Big",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -653,7 +653,7 @@
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Small",
+                    "groups": "Big",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -664,7 +664,7 @@
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Small",
+                    "groups": "Big",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -675,7 +675,7 @@
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Small",
+                    "groups": "Big",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -686,7 +686,7 @@
                     "path": "*/{Submit}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Small;Gamepad;Touch;Joystick;XR",
+                    "groups": "Big;Gamepad;Touch;Joystick;XR",
                     "action": "Submit",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -697,7 +697,7 @@
                     "path": "*/{Cancel}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Small;Gamepad;Touch;Joystick;XR",
+                    "groups": "Big;Gamepad;Touch;Joystick;XR",
                     "action": "Cancel",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -708,7 +708,7 @@
                     "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Small",
+                    "groups": "Big",
                     "action": "Point",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -719,7 +719,7 @@
                     "path": "<Pen>/position",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Small",
+                    "groups": "Big",
                     "action": "Point",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -741,7 +741,7 @@
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Small",
+                    "groups": ";Big",
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -752,7 +752,7 @@
                     "path": "<Pen>/tip",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Small",
+                    "groups": ";Big",
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -785,7 +785,7 @@
                     "path": "<Mouse>/scroll",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Small",
+                    "groups": ";Big",
                     "action": "ScrollWheel",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -796,7 +796,7 @@
                     "path": "<Mouse>/middleButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Small",
+                    "groups": ";Big",
                     "action": "MiddleClick",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -807,7 +807,7 @@
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Small",
+                    "groups": ";Big",
                     "action": "RightClick",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -839,8 +839,8 @@
     ],
     "controlSchemes": [
         {
-            "name": "Small",
-            "bindingGroup": "Small",
+            "name": "Big",
+            "bindingGroup": "Big",
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
@@ -899,8 +899,8 @@
             ]
         },
         {
-            "name": "Big",
-            "bindingGroup": "Big",
+            "name": "Small",
+            "bindingGroup": "Small",
             "devices": [
                 {
                     "devicePath": "<Keyboard>",

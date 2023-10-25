@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
         if (i==2)
         {
             var player2 = PlayerInput.Instantiate(playerB, controlScheme: "Big", pairWithDevice: Keyboard.current);
-            Forcefield.enabled = true;
+            Forcefield.enabled = true;  
         }
 
         }
