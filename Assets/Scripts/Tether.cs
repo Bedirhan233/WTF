@@ -5,47 +5,58 @@ using UnityEngine;
 
 public class Tether : MonoBehaviour
 {
-    public Transform Target;
+    GameObject Target;
+    Rigidbody2D targetRb2d;
     Rigidbody2D rb2d;
     DistanceJoint2D joint2d;
     public int tetherDistance = 3;
     bool magnet;
     Vector3 distance;
     public GameObject Forcefield;
-    public SpriteRenderer ForcefieldSprite;
+    SpriteRenderer ForcefieldSprite;
     // Start is called before the first frame update
     void Start()
     {
+        
+        Target = GameObject.FindGameObjectWithTag("BigGuy");
+        
+        targetRb2d=Target.GetComponent<Rigidbody2D>();
         rb2d = GetComponent<Rigidbody2D>();
         joint2d = GetComponent<DistanceJoint2D>();
+        joint2d.connectedBody = targetRb2d;
+        Forcefield = GameObject.FindGameObjectWithTag("Forcefield");
+        
+        //Instantiate(Forcefield, Forcefield.transform.position,Quaternion.identity );
+        ForcefieldSprite=Forcefield.GetComponent<SpriteRenderer>();
+        ForcefieldSprite.enabled = true;
     }
 
-    void Magnet()
-    {
+    //void Magnet()
+    //{
 
-        switch (magnet)
-        {
-            case true:
-                while (distance.sqrMagnitude > 0)
-                {
-                    joint2d.enabled = true;
-                    joint2d.distance = 0;
+    //    switch (magnet)
+    //    {
+    //        case true:
+    //            while (distance.sqrMagnitude > 0)
+    //            {
+    //                joint2d.enabled = true;
+    //                joint2d.distance = 0;
 
-                }
-                break;
+    //            }
+    //            break;
 
-            case false:
-                joint2d.enabled = false;
-                break;
+    //        case false:
+    //            joint2d.enabled = false;
+    //            break;
 
-        }
-        magnet = !magnet;
-    }
+    //    }
+    //    magnet = !magnet;
+    //}
     void Update()
     {
-        distance=Target.position - transform.position;
+        distance=Target.transform.position - transform.position;
         Forcefield.transform.position =transform.position + distance/2;
-        
+        Debug.Log(distance);
         
         if (distance.sqrMagnitude >= joint2d.distance*joint2d.distance-0.5f)
         {
@@ -60,7 +71,7 @@ public class Tether : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.M))
         {
-            Magnet();
+            //Magnet();
         }
 
     }

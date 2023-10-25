@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    public Transform target;
+    public GameObject target;
     public float smoothing;
 
     public Vector2 maxPos;
@@ -18,10 +18,14 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if(transform.position != target.position)
+        if (target == null)
         {
-            Vector3 targetPos = new Vector3(target.position.x, target.position.y,transform.position.z);
+            target = GameObject.FindGameObjectWithTag("Forcefield");
+        }
+
+        else if(transform.position != target.transform.position)
+        {
+            Vector3 targetPos = new Vector3(target.transform.position.x, target.transform.position.y,transform.position.z);
 
             targetPos.x = Mathf.Clamp(targetPos.x, minPos.x, maxPos.x);
             targetPos.y = Mathf.Clamp(targetPos.y, minPos.y, maxPos.y);

@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class Forcefield : MonoBehaviour
 {
-    private DistanceJoint2D distancejoint;
-    void Start()
-    {
-     distancejoint=GetComponent<DistanceJoint2D>();       
-    }
-
-
-    void Update()
+    public GameObject Player1;
+    public GameObject Player2;
+    private void Start()
     {
 
     }
+
 }

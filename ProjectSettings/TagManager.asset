@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SmalGuy
   - BigGuy
+  - Forcefield
   layers:
   - Default
   - TransparentFX
