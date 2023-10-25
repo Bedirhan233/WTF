@@ -115,15 +115,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3641831685908400706}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3fab67cdffc5fe40ac9d7dd4b97ee78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 8610488033151329511, guid: 4122c15066c56644aad5e8be7e966e68, type: 3}
   tetherDistance: 5
   Forcefield: {fileID: 1055131446993411773, guid: b404c054e30ee4a499e9f8aa7f3582c3, type: 3}
-  ForcefieldSprite: {fileID: 165992069552998698, guid: b404c054e30ee4a499e9f8aa7f3582c3, type: 3}
 --- !u!50 &417128776132569703
 Rigidbody2D:
   serializedVersion: 4
@@ -140,7 +138,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 24fdadbc5917e85419a1b1972d0d3a93, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -181,7 +179,7 @@ DistanceJoint2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3641831685908400706}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 41278123775375985, guid: 4122c15066c56644aad5e8be7e966e68, type: 3}
