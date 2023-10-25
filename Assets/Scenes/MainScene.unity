@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!212 &190179701 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 165992069552998698, guid: b404c054e30ee4a499e9f8aa7f3582c3, type: 3}
+  m_PrefabInstance: {fileID: 1919869579}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &387985748
 GameObject:
   m_ObjectHideFlags: 0
@@ -14982,7 +14987,7 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
-  m_PlayerPrefab: {fileID: 8610488033151329511, guid: 4122c15066c56644aad5e8be7e966e68, type: 3}
+  m_PlayerPrefab: {fileID: 3641831685908400706, guid: 81d2b06ca935f1942909f9eeca8125a9, type: 3}
   m_SplitScreen: 0
   m_MaintainAspectRatioInSplitScreen: 0
   m_FixedNumberOfSplitScreens: -1
@@ -15020,10 +15025,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 1782861447}
-  playerA: {fileID: 8610488033151329511, guid: 4122c15066c56644aad5e8be7e966e68, type: 3}
-  playerB: {fileID: 3641831685908400706, guid: 81d2b06ca935f1942909f9eeca8125a9, type: 3}
-  playerPrefabB: {fileID: 3641831685908400706, guid: 81d2b06ca935f1942909f9eeca8125a9, type: 3}
-  Forcefield: {fileID: 0}
+  playerA: {fileID: 3641831685908400706, guid: 81d2b06ca935f1942909f9eeca8125a9, type: 3}
+  playerB: {fileID: 8610488033151329511, guid: 4122c15066c56644aad5e8be7e966e68, type: 3}
+  playerPrefabB: {fileID: 8610488033151329511, guid: 4122c15066c56644aad5e8be7e966e68, type: 3}
+  Forcefield: {fileID: 190179701}
 --- !u!1 &1880264427
 GameObject:
   m_ObjectHideFlags: 0
@@ -15113,7 +15118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1055131446993411773, guid: b404c054e30ee4a499e9f8aa7f3582c3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
