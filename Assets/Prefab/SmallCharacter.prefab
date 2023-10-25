@@ -163,7 +163,7 @@ MonoBehaviour:
   movingSpeed: 10
   maxSpeed: 5
   changeDirectionOnAir: 0.1
-  jumpPower: 30
+  jumpPower: 20
   jumpDown: 1
   fallGravity: 2
   jumpGravity: 1

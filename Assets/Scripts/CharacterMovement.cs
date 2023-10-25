@@ -60,15 +60,23 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        
-        CreatingRaycast();
 
+        CreatingRaycast();
+        MovingWithScript();
+
+        AnimationHandler();
+
+        
+
+        //Movement();
+    }
+
+    private void MovingWithScript()
+    {
         velocity += direction * movingSpeed * Time.deltaTime;
         rb2.velocity = new Vector2(velocity.x, rb2.velocity.y);
         velocity.x = Mathf.Clamp(velocity.x, -maxSpeed, maxSpeed);
 
-            WalkingAnimationHandler();
-        
         if (direction.x == 0 || (direction.x < 0 == velocity.x > 0))
         {
             velocity.x *= 0;
@@ -77,10 +85,7 @@ public class CharacterMovement : MonoBehaviour
         {
             DirectionOnAir();
         }
-      
-        //Movement();
     }
-
 
     private void OnEnable()
     {
@@ -114,7 +119,7 @@ public class CharacterMovement : MonoBehaviour
         Debug.Log(velocity.x);
     }
 
-    private void WalkingAnimationHandler()
+    private void AnimationHandler()
     {
 
         // går åt vänster
@@ -124,7 +129,6 @@ public class CharacterMovement : MonoBehaviour
             spriteRenderer.flipX = false;
 
         }
-
 
         //går åt höger
 
@@ -192,6 +196,7 @@ public class CharacterMovement : MonoBehaviour
             {
                 rb2.velocity = new Vector2(velocity.x, jumpPower);
             }
+            Debug.Log("DEn hoppar");
            
         }
 

@@ -759,7 +759,7 @@ PrefabInstance:
       objectReference: {fileID: 38177162}
     - target: {fileID: 1161438983989802052, guid: 81d2b06ca935f1942909f9eeca8125a9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9388598
+      value: -1.9388599
       objectReference: {fileID: 0}
     - target: {fileID: 1161438983989802052, guid: 81d2b06ca935f1942909f9eeca8125a9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -775,15 +775,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1161438983989802052, guid: 81d2b06ca935f1942909f9eeca8125a9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1161438983989802052, guid: 81d2b06ca935f1942909f9eeca8125a9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1161438983989802052, guid: 81d2b06ca935f1942909f9eeca8125a9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1161438983989802052, guid: 81d2b06ca935f1942909f9eeca8125a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -801,6 +801,10 @@ PrefabInstance:
       propertyPath: Target
       value: 
       objectReference: {fileID: 38177164}
+    - target: {fileID: 2538126775479731861, guid: 81d2b06ca935f1942909f9eeca8125a9, type: 3}
+      propertyPath: jumpPower
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3641831685908400706, guid: 81d2b06ca935f1942909f9eeca8125a9, type: 3}
       propertyPath: m_Name
       value: SmallCharacter
@@ -818,6 +822,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2903836607806354788, guid: 4122c15066c56644aad5e8be7e966e68, type: 3}
+      propertyPath: jumpDown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903836607806354788, guid: 4122c15066c56644aad5e8be7e966e68, type: 3}
+      propertyPath: maxSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903836607806354788, guid: 4122c15066c56644aad5e8be7e966e68, type: 3}
+      propertyPath: jumpPower
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903836607806354788, guid: 4122c15066c56644aad5e8be7e966e68, type: 3}
+      propertyPath: movingSpeed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7487774127435028033, guid: 4122c15066c56644aad5e8be7e966e68, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.53
