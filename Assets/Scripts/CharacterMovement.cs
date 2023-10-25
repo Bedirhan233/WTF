@@ -167,7 +167,7 @@ public class CharacterMovement : MonoBehaviour
             animationHandler.isFalling = false;
             animationHandler.isJumping = false;
         }
-        // gravity
+        // gravity   
         if (rb2.velocity.y < 0)
         {
             rb2.gravityScale = fallGravity;
