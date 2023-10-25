@@ -15023,6 +15023,7 @@ MonoBehaviour:
   playerA: {fileID: 8610488033151329511, guid: 4122c15066c56644aad5e8be7e966e68, type: 3}
   playerB: {fileID: 3641831685908400706, guid: 81d2b06ca935f1942909f9eeca8125a9, type: 3}
   playerPrefabB: {fileID: 3641831685908400706, guid: 81d2b06ca935f1942909f9eeca8125a9, type: 3}
+  Forcefield: {fileID: 0}
 --- !u!1 &1880264427
 GameObject:
   m_ObjectHideFlags: 0
