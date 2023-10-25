@@ -9,6 +9,8 @@ public class CharacterMovement : MonoBehaviour
     Vector3 velocity;
     Vector3 direction;
 
+    public AudioManager audioManager;
+
     SpriteRenderer spriteRenderer;
   
    
@@ -123,6 +125,7 @@ public class CharacterMovement : MonoBehaviour
     public void Movement(InputAction.CallbackContext context)
     {
         direction = context.ReadValue<Vector2>();
+        
 
     }
 
@@ -135,6 +138,7 @@ public class CharacterMovement : MonoBehaviour
             animationHandler.smalCharacterWalking = true;
             animationHandler.bigCharacterWalking = true;
             spriteRenderer.flipX = false;
+            audioManager.BigGuyWalkingSound();
 
         }
 
@@ -145,6 +149,8 @@ public class CharacterMovement : MonoBehaviour
             animationHandler.smalCharacterWalking = true;
             animationHandler.bigCharacterWalking = true;
             spriteRenderer.flipX = true;
+            audioManager.BigGuyWalkingSound();
+
         }
 
         // står still
@@ -207,10 +213,23 @@ public class CharacterMovement : MonoBehaviour
                 rb2.velocity = new Vector2(velocity.x, jumpPower);
             }
 
-            Debug.Log("Jump");
-            
 
-           
+
+            if(gameObject.tag == "SmalGuy" && onGround)
+            {
+            audioManager.SmalGuyJumpingSound();
+
+            }
+
+            if(gameObject.tag == "BigGuy" && onGround)
+            {
+                audioManager.BigGuyJumpingSound();
+                
+            }
+
+
+
+
         }
     }
 }

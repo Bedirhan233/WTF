@@ -5,6 +5,7 @@ using UnityEngine;
 public class AnimationHandler : MonoBehaviour
 {
     Animator animator;
+    public AudioManager audioManager;
 
     public bool smalCharacterWalking;
     public bool isJumping;
@@ -86,12 +87,15 @@ public class AnimationHandler : MonoBehaviour
     {
         if(isJumping) 
         {
-        animator.SetBool("isJumping", true);
+            animator.SetBool("isJumping", true);
+            
+            
         }
 
         if (!isJumping)
         {
             animator.SetBool("isJumping", false);
+            
         }
     }
 
@@ -125,12 +129,12 @@ public class AnimationHandler : MonoBehaviour
     {
         if(isJumping)
         {
-        animator.SetBool("BigGuyJump", true);
+        animator.SetBool("bigGuyJump", true);
         }
 
         if (!isJumping)
         {
-            animator.SetBool("BigGuyJump", false);
+            animator.SetBool("bigGuyJump", false);
         }
     }
 }
