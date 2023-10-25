@@ -102,13 +102,21 @@ public class CharacterMovement : MonoBehaviour
     }
     private void CreatingRaycast()
     {
-        checkGround1 = Physics2D.Raycast(transform.position, new Vector2(1, -1), groundCheckLength);
-        checkGround2 = Physics2D.Raycast(transform.position, Vector2.down, groundCheckLength);
-        checkGround3 = Physics2D.Raycast(transform.position, new Vector2(-1, -1), groundCheckLength);
+        Vector3 start = transform.position;
+        Vector3 left = transform.position;
+        Vector3 right = transform.position;
 
-        Debug.DrawRay(transform.position, new Vector2(1, -1) * groundCheckLength, Color.green);
-        Debug.DrawRay(transform.position, Vector2.down * groundCheckLength, Color.red);
-        Debug.DrawRay(transform.position, new Vector2(-1, -1) * groundCheckLength, Color.blue);
+        start.x -= 0f;
+        left.x -= -0.3f;
+        right.x -= 0.3f;
+
+        checkGround1 = Physics2D.Raycast(start, Vector2.down, groundCheckLength);
+        checkGround2 = Physics2D.Raycast(left, Vector2.down, groundCheckLength);
+        checkGround3 = Physics2D.Raycast(right, Vector2.down, groundCheckLength);
+
+        Debug.DrawRay(start, Vector2.down * groundCheckLength, Color.green);
+        Debug.DrawRay(left, Vector2.down * groundCheckLength, Color.red);
+        Debug.DrawRay(right, Vector2.down * groundCheckLength, Color.blue);
 
         onGround = checkGround1 || checkGround2 || checkGround3;
     }
