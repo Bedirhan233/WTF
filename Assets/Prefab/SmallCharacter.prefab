@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1161438983989802052}
+  - component: {fileID: 1439617689088064326}
   - component: {fileID: 6124815097858793766}
   - component: {fileID: 2070027401070904243}
   - component: {fileID: 417128776132569703}
@@ -19,7 +20,7 @@ GameObject:
   - component: {fileID: 2409621749829663580}
   m_Layer: 0
   m_Name: SmallCharacter
-  m_TagString: Untagged
+  m_TagString: SmalGuy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,6 +40,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1439617689088064326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3641831685908400706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f4ccabc8f238024da2003619dad12b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smalCharacterWalking: 0
 --- !u!212 &6124815097858793766
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -158,7 +172,7 @@ DistanceJoint2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3641831685908400706}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 0}
@@ -170,7 +184,7 @@ DistanceJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
   m_Distance: 5
-  m_MaxDistanceOnly: 0
+  m_MaxDistanceOnly: 1
 --- !u!114 &5502398232145367354
 MonoBehaviour:
   m_ObjectHideFlags: 0

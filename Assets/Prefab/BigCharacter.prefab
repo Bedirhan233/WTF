@@ -12,9 +12,12 @@ GameObject:
   - component: {fileID: 2563916060567064347}
   - component: {fileID: 41278123775375985}
   - component: {fileID: 2724966102879922573}
+  - component: {fileID: 6726161555479775327}
+  - component: {fileID: 1975229583125552271}
+  - component: {fileID: 2903836607806354788}
   m_Layer: 0
   m_Name: BigCharacter
-  m_TagString: Untagged
+  m_TagString: BigGuy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,3 +151,56 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.27275556}
   m_Size: {x: 1, y: 1.5455111}
   m_Direction: 0
+--- !u!95 &6726161555479775327
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8610488033151329511}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1975229583125552271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8610488033151329511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f4ccabc8f238024da2003619dad12b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smalCharacterWalking: 0
+--- !u!114 &2903836607806354788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8610488033151329511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e80eb1c130d574e43be5322acd9c5066, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movingSpeed: 100
+  maxSpeed: 10
+  changeDirectionOnAir: 0.1
+  jumpPower: 10
+  jumpDown: 0.1
+  fallGravity: 4
+  jumpGravity: 1
