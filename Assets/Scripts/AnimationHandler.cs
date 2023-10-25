@@ -70,6 +70,10 @@ public class AnimationHandler : MonoBehaviour
         if (!smalCharacterWalking)
         {
             animator.SetBool("IsWalking", false);
+        }
+
+    }
+
     void SmalCharacterIsJumping()
     {
         if(isJumping) 
@@ -93,5 +97,6 @@ public class AnimationHandler : MonoBehaviour
         {
             animator.SetBool("isFalling", false);
         }
+
     }
 }
