@@ -125,6 +125,7 @@ public class CharacterMovement : MonoBehaviour
 
         }
 
+
         //går åt höger
 
         if (velocity.x < 0)
@@ -136,7 +137,7 @@ public class CharacterMovement : MonoBehaviour
         // står still
         if (direction.x == 0)
         {
-            animationHandler.smalCharacterWalking = false;
+            animationHandler.smalCharacterWalking = false;  
         }
 
         // hoppar upp
@@ -162,6 +163,15 @@ public class CharacterMovement : MonoBehaviour
             animationHandler.isFalling = false;
             animationHandler.isJumping = false;
         }
+        // gravity
+        if (rb2.velocity.y < 0)
+        {
+            rb2.gravityScale = fallGravity;
+        }
+        if (rb2.velocity.y > 0)
+        {
+            rb2.gravityScale = jumpGravity;
+        }
 
 
 
@@ -176,7 +186,7 @@ public class CharacterMovement : MonoBehaviour
     public void JumpingManagement(InputAction.CallbackContext context)
     {
 
-        if(context.performed)
+        if(context.started)
         { 
             if (onGround)
             {
@@ -189,16 +199,7 @@ public class CharacterMovement : MonoBehaviour
 
 
 
-        // gravity
-
-        if (rb2.velocity.y < 0)
-        {
-            rb2.gravityScale = fallGravity;
-        }
-        if (rb2.velocity.y > 0)
-        {
-            rb2.gravityScale = jumpGravity;
-        }
+       
 
         
     }

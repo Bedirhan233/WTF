@@ -801,10 +801,6 @@ PrefabInstance:
       propertyPath: Target
       value: 
       objectReference: {fileID: 38177164}
-    - target: {fileID: 2538126775479731861, guid: 81d2b06ca935f1942909f9eeca8125a9, type: 3}
-      propertyPath: jumpPower
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 3641831685908400706, guid: 81d2b06ca935f1942909f9eeca8125a9, type: 3}
       propertyPath: m_Name
       value: SmallCharacter

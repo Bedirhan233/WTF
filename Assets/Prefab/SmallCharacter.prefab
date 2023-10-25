@@ -163,9 +163,9 @@ MonoBehaviour:
   movingSpeed: 10
   maxSpeed: 5
   changeDirectionOnAir: 0.1
-  jumpPower: 100
-  jumpDown: 0.2
-  fallGravity: 4
+  jumpPower: 30
+  jumpDown: 1
+  fallGravity: 2
   jumpGravity: 1
   ActiveControlScheme:
     m_Name: 
