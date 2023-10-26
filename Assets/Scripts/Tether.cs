@@ -56,7 +56,7 @@ public class Tether : MonoBehaviour
     {
         distance=Target.transform.position - transform.position;
         Forcefield.transform.position =transform.position + distance/2;
-        Debug.Log(distance);
+        //Debug.Log(distance);
         
         if (distance.sqrMagnitude >= joint2d.distance*joint2d.distance-0.5f)
         {
