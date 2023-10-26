@@ -117,7 +117,6 @@ public class AnimationHandler : MonoBehaviour
         if(bigCharacterWalking)
         {
             animator.SetBool("BigGuyWalking", true);
-            Debug.Log("ITS WALKING");
         }
 
         if(!bigCharacterWalking)

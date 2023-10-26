@@ -7,7 +7,7 @@ using UnityEngine.Rendering;
 public class AudioManager : MonoBehaviour
 {
     AudioSource source;
-    public AudioClip smalJumping, bigJumping, smalWalking, bigWalking, bigThrowing;
+    public AudioClip smalJumping, bigJumping, smalWalking, bigWalking, bigThrowing, pickUp;
 
 
 
@@ -23,6 +23,8 @@ public class AudioManager : MonoBehaviour
     {
         playingSmalJump = false;
     }
+
+
 
     public void SmalGuyJumpingSound()
     {
@@ -46,5 +48,13 @@ public class AudioManager : MonoBehaviour
         source.pitch = 1;
         source.PlayOneShot(bigWalking);
 
+    }
+
+    public void PickUpStone()
+    {
+
+        source.clip = pickUp;
+        source.pitch = 1;
+        source.PlayOneShot(pickUp);
     }
 }

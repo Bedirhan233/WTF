@@ -8,6 +8,7 @@ TagManager:
   - BigGuy
   - Forcefield
   - Rock
+  - Sound
   layers:
   - Default
   - TransparentFX
