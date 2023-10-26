@@ -25,9 +25,30 @@ public class PlayerController : MonoBehaviour
     }
     public void OnPlayerJoined(int Control)
     {
+        Gamepad device1;
+        Gamepad device2;
         i++;
-          //  inputManager.playerPrefab = playerPrefabB;
-        if(i==1)
+        if (i == 1)
+        {
+            //InputSystem.AddDevice<Gamepad>("1");
+            device1 = InputSystem.AddDevice<Gamepad>("1");
+        }
+        if (i == 2)
+        {
+            device2 = InputSystem.AddDevice<Gamepad>("2");
+
+            //InputSystem.AddDevice<Gamepad>("2");
+        }
+
+      
+        
+        //foreach (var item in InputSystem.devices)
+        //{
+        //    Debug.Log(item.deviceId);
+        //}
+        //Debug.Log(InputSystem.devices[0].deviceId);
+        //  inputManager.playerPrefab = playerPrefabB;
+        if (i==1)
         { 
             if(Control == 0)
             {

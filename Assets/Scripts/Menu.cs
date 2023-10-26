@@ -2,10 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
+
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+
 
 public class Menu : MonoBehaviour
 {
+    public Button PlayButton;
+    public Button TutorialButton;
+    public Button QuitButton;
     public static RectTransform Cursor;
+    public GameObject ChooseCharacterText;
+    public Selectable Small;
+    public EventSystem eventSystem;
+    public Selectable Playbutton;
     // Start is called before the first frame update
     private void Start()
     {
@@ -13,7 +25,14 @@ public class Menu : MonoBehaviour
     }
     void Update()
     {
+
         
+
+        if (eventSystem.currentSelectedGameObject==null)
+        {
+            Playbutton.Select();
+            
+        }
       
     }
 
@@ -21,7 +40,7 @@ public class Menu : MonoBehaviour
     public void Play()
     {
         ChooseCharacter();
-        SceneManager.LoadScene("MainScene");
+       // SceneManager.LoadScene("MainScene");
     }
     public void Tutorial()
     {
@@ -34,7 +53,13 @@ public class Menu : MonoBehaviour
     }
     public void ChooseCharacter()
     {
-                
+         PlayButton.interactable = false;
+        QuitButton.interactable=false;
+        TutorialButton.interactable=false;
+        ChooseCharacterText.SetActive(true);
+        Small.Select();
+        Debug.Log(eventSystem.currentSelectedGameObject);
+        
     }
 
 }
