@@ -6,8 +6,10 @@ using UnityEngine.Rendering;
 
 public class AudioManager : MonoBehaviour
 {
-    AudioSource source;
-    public AudioClip smalJumping, bigJumping, smalWalking, bigWalking, bigThrowing, pickUp;
+    public AudioSource source;
+    public AudioSource source2;
+
+    public AudioClip smalJumping, bigJumping, smalWalking, bigWalking, bigThrowing, pickUp, backgroundMusic, wallHitingGrass;
 
 
 
@@ -56,5 +58,25 @@ public class AudioManager : MonoBehaviour
         source.clip = pickUp;
         source.pitch = 1;
         source.PlayOneShot(pickUp);
+    }
+
+    public void ThrowUpStone()
+    {
+
+        source.clip = bigThrowing;
+        source.pitch = 1;
+        source.PlayOneShot(bigThrowing);
+    }
+
+    public void BackgroundMusic()
+    {
+        source2.Play(); 
+    }
+
+    public void WallHittingGrass()
+    {
+        source.clip = wallHitingGrass;
+        source.pitch = 1;
+        source.PlayOneShot(wallHitingGrass); ;
     }
 }

@@ -9,6 +9,8 @@ TagManager:
   - Forcefield
   - Rock
   - Sound
+  - Wall
+  - Grass
   layers:
   - Default
   - TransparentFX

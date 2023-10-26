@@ -12,18 +12,7 @@ public class Rock : MonoBehaviour
     void Start()
     {
         rigidbody2 = GetComponent<Rigidbody2D>();
-        if(bigCharacter.flipX ==false)
-        {
-            direction = Vector2.right;
-        }
-        if (bigCharacter.flipX == true)
-        {
-            Debug.Log("Vänster");
-            direction = Vector2.left;
-        }
         
-
-        rigidbody2.velocity = direction*speed;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -37,7 +26,21 @@ public class Rock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         
+        if (bigCharacter.flipX == false)
+        {
+            direction = Vector2.right;
+        }
+        if (bigCharacter.flipX == true)
+        {
+            Debug.Log("Vänster");
+            direction = Vector2.left;
+        }
+
+
+        rigidbody2.velocity = direction * speed;
+
     }
     //private void OnDestroy()
     //{
