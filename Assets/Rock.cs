@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Rock : MonoBehaviour
 {
-    public SpriteRenderer bigCharacter;
+    public CharacterMovement bigCharacter;
     Rigidbody2D rigidbody2;
     public float speed;
     Vector2 direction;
@@ -12,18 +12,10 @@ public class Rock : MonoBehaviour
     void Start()
     {
         rigidbody2 = GetComponent<Rigidbody2D>();
-        if(bigCharacter.flipX ==false)
-        {
-            direction = Vector2.right;
-        }
-        if (bigCharacter.flipX == true)
-        {
-            Debug.Log("Vänster");
-            direction = Vector2.left;
-        }
         
+        Debug.Log(CharacterMovement.lookingRight);
 
-        rigidbody2.velocity = direction*speed;
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -37,7 +29,17 @@ public class Rock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (CharacterMovement.lookingRight == true)
+        {
+            direction = Vector2.right;
+        }
+        else if (CharacterMovement.lookingRight == false)
+        {
+            direction = Vector2.left;
+        }
+
+        rigidbody2.velocity = direction * speed;
+
     }
     //private void OnDestroy()
     //{
