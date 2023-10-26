@@ -15307,7 +15307,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-<<<<<<< Updated upstream
     - target: {fileID: -1376272317253617818, guid: b404c054e30ee4a499e9f8aa7f3582c3, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -15316,8 +15315,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-=======
->>>>>>> Stashed changes
     - target: {fileID: 556274290733909693, guid: b404c054e30ee4a499e9f8aa7f3582c3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.616066
@@ -15361,6 +15358,10 @@ PrefabInstance:
     - target: {fileID: 1055131446993411773, guid: b404c054e30ee4a499e9f8aa7f3582c3, type: 3}
       propertyPath: m_Name
       value: Forcefield
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055131446993411773, guid: b404c054e30ee4a499e9f8aa7f3582c3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
