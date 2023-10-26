@@ -23,5 +23,9 @@ public class Wall : MonoBehaviour
         {
             audioManager.WallHittingGrass();
         }
+        if (collision.gameObject.tag == "Rock")
+        {
+            audioManager.StoneHittingWall();
+        }
     }
 }

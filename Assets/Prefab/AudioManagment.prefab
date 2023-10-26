@@ -147,11 +147,13 @@ MonoBehaviour:
   smalJumping: {fileID: 8300000, guid: 43bba4cd85480aa42805a0f854415646, type: 3}
   bigJumping: {fileID: 8300000, guid: 5e0c7ca7306a3e64692efdb4da34f7c2, type: 3}
   smalWalking: {fileID: 0}
-  bigWalking: {fileID: 8300000, guid: 115890c70db0faa48a3aa2ee99fef471, type: 3}
+  stoneHitWall: {fileID: 8300000, guid: 1ecc483ffe12ea540b35bcde274a43e0, type: 3}
   bigThrowing: {fileID: 8300000, guid: 7e3f2fa60cb29464aa9769b7ff5bcb91, type: 3}
   pickUp: {fileID: 8300000, guid: 3e7222d734a98f14fa994f7c5a563edb, type: 3}
   backgroundMusic: {fileID: 0}
   wallHitingGrass: {fileID: 8300000, guid: 622b141e8ec46fb45ba4f275e552590c, type: 3}
+  jumpingSound: 1
+  backgroundMUsicVolume: 1
 --- !u!82 &8048047557440478107
 AudioSource:
   m_ObjectHideFlags: 0

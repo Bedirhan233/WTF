@@ -168,6 +168,17 @@ Transform:
   - {fileID: 2036378644}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &16740731 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8501471345461933551, guid: 22a66e577092d6c4dacd106a5877c647, type: 3}
+  m_PrefabInstance: {fileID: 1640671767}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63147fc6a3661fc44bc32e784ba65895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &43949989
 GameObject:
   m_ObjectHideFlags: 0
@@ -2127,24 +2138,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 297088585546644905, guid: 918750546302462419abf1efaebd77c2, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 4.916932
-      objectReference: {fileID: 0}
-    - target: {fileID: 297088585546644905, guid: 918750546302462419abf1efaebd77c2, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.0501617
-      objectReference: {fileID: 0}
-    - target: {fileID: 297088585546644905, guid: 918750546302462419abf1efaebd77c2, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.61993
-      objectReference: {fileID: 0}
-    - target: {fileID: 297088585546644905, guid: 918750546302462419abf1efaebd77c2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.56
       objectReference: {fileID: 0}
     - target: {fileID: 297088585546644905, guid: 918750546302462419abf1efaebd77c2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.49
+      value: 3.96
       objectReference: {fileID: 0}
     - target: {fileID: 297088585546644905, guid: 918750546302462419abf1efaebd77c2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2152,7 +2151,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 297088585546644905, guid: 918750546302462419abf1efaebd77c2, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 297088585546644905, guid: 918750546302462419abf1efaebd77c2, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2164,7 +2163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 297088585546644905, guid: 918750546302462419abf1efaebd77c2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 297088585546644905, guid: 918750546302462419abf1efaebd77c2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2176,16 +2175,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 297088585546644905, guid: 918750546302462419abf1efaebd77c2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 540951482395389554, guid: 918750546302462419abf1efaebd77c2, type: 3}
       propertyPath: m_Name
       value: Wall
       objectReference: {fileID: 0}
-    - target: {fileID: 1231800410440057309, guid: 918750546302462419abf1efaebd77c2, type: 3}
-      propertyPath: m_SortingOrder
-      value: 20
-      objectReference: {fileID: 0}
+    - target: {fileID: 4192686619341648003, guid: 918750546302462419abf1efaebd77c2, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 16740731}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2593,7 +2592,7 @@ GameObject:
   - component: {fileID: 1638365518}
   m_Layer: 0
   m_Name: grass
-  m_TagString: Untagged
+  m_TagString: Grass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3072,6 +3071,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8048047557440478107, guid: 22a66e577092d6c4dacd106a5877c647, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e37a372b85a82514ab9d39a0d8b8416b, type: 3}
+    - target: {fileID: 8501471345461933551, guid: 22a66e577092d6c4dacd106a5877c647, type: 3}
+      propertyPath: stoneHitWall
+      value: 
+      objectReference: {fileID: 8300000, guid: 1ecc483ffe12ea540b35bcde274a43e0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

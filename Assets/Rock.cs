@@ -27,20 +27,20 @@ public class Rock : MonoBehaviour
     void Update()
     {
 
-        
-        if (bigCharacter.flipX == false)
+
+        if (Throw.rock == 1)
         {
-            direction = Vector2.right;
+            if (CharacterMovement.lookingRight == false)
+            {
+                direction = Vector2.right;
+            }
+            else if (CharacterMovement.lookingRight == true)
+            {
+                direction = Vector2.left;
+            }
+            Throw.rock++;
+            rigidbody2.velocity = direction * speed;
         }
-        if (bigCharacter.flipX == true)
-        {
-            Debug.Log("Vänster");
-            direction = Vector2.left;
-        }
-
-
-        rigidbody2.velocity = direction * speed;
-
     }
     //private void OnDestroy()
     //{

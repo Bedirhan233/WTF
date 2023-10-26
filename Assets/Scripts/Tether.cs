@@ -60,7 +60,7 @@ public class Tether : MonoBehaviour
         
         if (distance.sqrMagnitude >= joint2d.distance*joint2d.distance-0.5f)
         {
-            ForcefieldSprite.color = new Color(255, 255, 255, 185);
+            ForcefieldSprite.color = new Color(255, 255, 255, 150);
             
           //  -Forcefield.transform.right = transform.position;
         }

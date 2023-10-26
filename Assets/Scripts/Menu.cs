@@ -18,6 +18,8 @@ public class Menu : MonoBehaviour
     public Selectable Small;
     public EventSystem eventSystem;
     public Selectable Playbutton;
+
+    public AudioMenu audioManager;
     // Start is called before the first frame update
     private void Start()
     {
@@ -39,16 +41,19 @@ public class Menu : MonoBehaviour
     // Update is called once per frame
     public void Play()
     {
+        audioManager.ClickingSound();
         SceneManager.LoadScene("MainScene");
         ChooseCharacter();
        // SceneManager.LoadScene("MainScene");
     }
     public void Tutorial()
     {
+        audioManager.ClickingSound();
         ChooseCharacter();
     }
     public void Quit()
     {
+        audioManager.ClickingSound();
         Application.Quit();
         UnityEditor.EditorApplication.isPlaying = false;
     }
