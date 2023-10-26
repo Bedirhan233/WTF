@@ -9,12 +9,14 @@ public class Rock : MonoBehaviour
     public float speed;
     Vector2 direction;
 
+    public static int totalRocks;
+
     public AudioManager audioManager;
     // Start is called before the first frame update
     void Start()
     {
         rigidbody2 = GetComponent<Rigidbody2D>();
-        
+        totalRocks++;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -34,7 +36,7 @@ public class Rock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log("Total rock in scene " + totalRocks);
 
         if (Throw.rock == 1)
         {

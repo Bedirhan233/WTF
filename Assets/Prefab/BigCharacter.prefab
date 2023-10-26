@@ -225,6 +225,7 @@ MonoBehaviour:
   isFalling: 0
   bigCharacterWalking: 0
   bigCharacterJumping: 0
+  isThrowing: 0
 --- !u!114 &2903836607806354788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -416,5 +417,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb27361e967f1a246be56021f4bc200b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rock: {fileID: 8240459503763409228, guid: 7278d3c6e53666649b38b2eeae6da8c9, type: 3}
+  rockObject: {fileID: 8240459503763409228, guid: 7278d3c6e53666649b38b2eeae6da8c9, type: 3}
   Throwspot: {fileID: 2468394882257395170}
+  timer: 0
+  animationLength: 1.5
+  timerThrow: 1.2
+  timeBetweenInstantiate: 1.2

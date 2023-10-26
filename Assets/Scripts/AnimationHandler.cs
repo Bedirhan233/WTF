@@ -42,12 +42,11 @@ public class AnimationHandler : MonoBehaviour
         {
             BigCharacterWalkingAnimation();
         }
-       
-        
 
+
+        ThrowingAnimation();
         SmalCharacterIsJumping();
         SmalCharacterFalling();
-        ThrowingAnimation();
         BigCharacterWalking();
         BigCharacterJumpingAnimation();
 
@@ -140,15 +139,22 @@ public class AnimationHandler : MonoBehaviour
 
     void ThrowingAnimation()
     {
-        if (isThrowing)
+       
+        if(isThrowing)
         {
             animator.SetBool("isThrowing", true);
+            
             Debug.Log("Kastar");
-        }
 
+        }
         if (!isThrowing)
         {
             animator.SetBool("isThrowing", false);
+            Debug.Log("Stoppar");
+
         }
+
+
+
     }
 }
