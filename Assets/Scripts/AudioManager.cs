@@ -82,8 +82,9 @@ public class AudioManager : MonoBehaviour
 
     public void StoneHittingWall()
     {
-        source.clip = stoneHitWall;
+        source.clip = wallHitingGrass;
         source.pitch = 1;
-        source.PlayOneShot(stoneHitWall); ;
+        Debug.Log("LJUD");
+        source.PlayOneShot(wallHitingGrass); ;
     }
 }

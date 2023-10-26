@@ -8,6 +8,8 @@ public class Rock : MonoBehaviour
     Rigidbody2D rigidbody2;
     public float speed;
     Vector2 direction;
+
+    public AudioManager audioManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,12 @@ public class Rock : MonoBehaviour
         }   
         else
           rigidbody2.gravityScale = 2;
+
+        if(collision.gameObject.tag == "Other")
+        {
+            audioManager.WallHittingGrass();
+            
+        }
     }
     // Update is called once per frame
     void Update()
@@ -42,6 +50,8 @@ public class Rock : MonoBehaviour
             rigidbody2.velocity = direction * speed;
         }
     }
+
+
     //private void OnDestroy()
     //{
     //    Throw.rock--;
