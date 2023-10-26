@@ -6,10 +6,12 @@ public class Throw : MonoBehaviour
 {
     public GameObject Rock;
     public GameObject Throwspot;
+    AudioManager audioManager;
     private int rock = 0;
     void Start()
     {
         rock = 0;
+        audioManager = GameObject.FindObjectOfType<AudioManager>();
     }
     public void ThrowHappen()
     {
@@ -24,7 +26,9 @@ public class Throw : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Rock"))
-        { 
+        {
+            Debug.Log("PickUp");
+        audioManager.PickUpStone();
         Destroy(other.gameObject);
         rock--;
         }   

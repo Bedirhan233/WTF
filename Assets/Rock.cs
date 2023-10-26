@@ -16,8 +16,11 @@ public class Rock : MonoBehaviour
         {
             direction = Vector2.right;
         }
-        else
+        if (bigCharacter.flipX == true)
+        {
+            Debug.Log("Vänster");
             direction = Vector2.left;
+        }
         
 
         rigidbody2.velocity = direction*speed;
