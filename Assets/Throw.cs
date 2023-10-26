@@ -19,6 +19,7 @@ public class Throw : MonoBehaviour
         {
             Instantiate(Rock, Throwspot.transform.position, Quaternion.identity);
             rock++;
+            audioManager.ThnrowStone();
         }
     }
 
