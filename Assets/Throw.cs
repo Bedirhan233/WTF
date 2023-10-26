@@ -62,6 +62,7 @@ public class Throw : MonoBehaviour
                 if(Rock.totalRocks < 1) 
                 {
                 Instantiate(rockObject, Throwspot.transform.position, Quaternion.identity);
+                    audioManager.ThrowUpStone();
                 }
                
 

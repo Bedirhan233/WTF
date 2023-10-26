@@ -152,7 +152,7 @@ MonoBehaviour:
   pickUp: {fileID: 8300000, guid: 3e7222d734a98f14fa994f7c5a563edb, type: 3}
   backgroundMusic: {fileID: 0}
   wallHitingGrass: {fileID: 8300000, guid: 622b141e8ec46fb45ba4f275e552590c, type: 3}
-  jumpingSound: 1
+  jumpingSound: 0.5
   backgroundMUsicVolume: 1
 --- !u!82 &8048047557440478107
 AudioSource:
