@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -4536631243265887167}
   - component: {fileID: -6570756518478310426}
   - component: {fileID: -2180368654033915132}
+  - component: {fileID: -4998513118148455342}
   m_Layer: 0
   m_Name: Rock
   m_TagString: Rock
@@ -99,9 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4900b4a51a1c83c448226adb57de772b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bigCharacter: {fileID: 2903836607806354788, guid: 4122c15066c56644aad5e8be7e966e68, type: 3}
-  audioManager: {fileID: 0}
-  speed: 4
+  bigCharacter: {fileID: 2563916060567064347, guid: 4122c15066c56644aad5e8be7e966e68, type: 3}
+  speed: 2
 --- !u!50 &-6570756518478310426
 Rigidbody2D:
   serializedVersion: 4
@@ -164,3 +164,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &-4998513118148455342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8240459503763409228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4900b4a51a1c83c448226adb57de772b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bigCharacter: {fileID: 2563916060567064347, guid: 4122c15066c56644aad5e8be7e966e68, type: 3}
+  speed: 8
