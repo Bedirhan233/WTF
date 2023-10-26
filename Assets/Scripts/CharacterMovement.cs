@@ -20,6 +20,8 @@ public class CharacterMovement : MonoBehaviour
 
     bool onGround;
 
+    public static bool lookingRight;
+
     [Header ("Speed")]
     public float movingSpeed = 100;
     public float maxSpeed = 10;
@@ -142,6 +144,7 @@ public class CharacterMovement : MonoBehaviour
             animationHandler.smalCharacterWalking = true;
             animationHandler.bigCharacterWalking = true;
             spriteRenderer.flipX = false;
+            lookingRight = true;
 
         }
 
@@ -152,6 +155,8 @@ public class CharacterMovement : MonoBehaviour
             animationHandler.smalCharacterWalking = true;
             animationHandler.bigCharacterWalking = true;
             spriteRenderer.flipX = true;
+            lookingRight = false;
+
 
         }
 
