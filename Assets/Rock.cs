@@ -4,14 +4,23 @@ using UnityEngine;
 
 public class Rock : MonoBehaviour
 {
+    public SpriteRenderer bigCharacter;
     Rigidbody2D rigidbody2;
     public float speed;
-    
+    Vector2 direction;
     // Start is called before the first frame update
     void Start()
     {
         rigidbody2 = GetComponent<Rigidbody2D>();
-        rigidbody2.velocity = Vector3.right*speed;
+        if(bigCharacter.flipX ==false)
+        {
+            direction = Vector2.right;
+        }
+        else
+            direction = Vector2.left;
+        
+
+        rigidbody2.velocity = direction*speed;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
