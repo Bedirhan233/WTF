@@ -5,7 +5,7 @@ using UnityEngine;
 public class AnimationHandler : MonoBehaviour
 {
     Animator animator;
-   // public AudioManager audioManager;
+    
 
     public bool smalCharacterWalking;
     public bool isJumping;
@@ -117,7 +117,7 @@ public class AnimationHandler : MonoBehaviour
         if(bigCharacterWalking)
         {
             animator.SetBool("BigGuyWalking", true);
-            //  Debug.Log("ITS WALKING");
+            Debug.Log("ITS WALKING");
         }
 
         if(!bigCharacterWalking)

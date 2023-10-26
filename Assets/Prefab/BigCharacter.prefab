@@ -136,8 +136,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
+  m_UseAutoMass: 1
+  m_Mass: 1.3309093
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -224,6 +224,7 @@ MonoBehaviour:
   isJumping: 0
   isFalling: 0
   bigCharacterWalking: 0
+  bigCharacterJumping: 0
 --- !u!114 &2903836607806354788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,6 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e80eb1c130d574e43be5322acd9c5066, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
   movingSpeed: 20
   maxSpeed: 5
   changeDirectionOnAir: 0.5
@@ -365,7 +367,7 @@ MonoBehaviour:
     m_ActionId: 9ce85a33-fdd4-4083-85d3-ea3119d3265f
     m_ActionName: Player/Jump[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: Gamepad
+  m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -376,7 +378,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8610488033151329511}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3fab67cdffc5fe40ac9d7dd4b97ee78, type: 3}
   m_Name: 

@@ -6,7 +6,6 @@ using UnityEngine.Rendering;
 
 public class AudioManager : MonoBehaviour
 {
-    public AnimationHandler characterController;
     AudioSource source;
     public AudioClip smalJumping, bigJumping, smalWalking, bigWalking, bigThrowing;
 
