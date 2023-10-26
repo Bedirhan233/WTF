@@ -5,6 +5,7 @@ using UnityEngine;
 public class Rock : MonoBehaviour
 {
     public CharacterMovement bigCharacter;
+   
     Rigidbody2D rigidbody2;
     public float speed;
     Vector2 direction;
@@ -14,6 +15,7 @@ public class Rock : MonoBehaviour
         rigidbody2 = GetComponent<Rigidbody2D>();
         
         Debug.Log(CharacterMovement.lookingRight);
+       
 
 
     }
@@ -25,10 +27,14 @@ public class Rock : MonoBehaviour
         }   
         else
           rigidbody2.gravityScale = 2;
+
+        
     }
     // Update is called once per frame
     void Update()
     {
+        if (Throw.rock==1)
+        { 
         if (CharacterMovement.lookingRight == true)
         {
             direction = Vector2.right;
@@ -37,8 +43,10 @@ public class Rock : MonoBehaviour
         {
             direction = Vector2.left;
         }
+            Throw.rock++;
+            rigidbody2.velocity = direction * speed;
+        }
 
-        rigidbody2.velocity = direction * speed;
 
     }
     //private void OnDestroy()

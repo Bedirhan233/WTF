@@ -8,10 +8,12 @@ public class AudioManager : MonoBehaviour
 {
     public AudioSource source;
     public AudioSource source2;
-    public AudioClip smalJumping, bigJumping, smalWalking, bigWalking, bigThrowing, pickUp;
+    public AudioClip smalJumping, bigJumping, smalWalking, bigWalking, bigThrowing, pickUp, wallHitingGround, rockHittingWall;
 
     public float jumpingSoundVolume = 0.5f;
     public float backgroundMusicVolume = 1f;
+
+    public GameObject wall;
 
 
 
@@ -70,5 +72,19 @@ public class AudioManager : MonoBehaviour
     {
         source2.Play();
         
+    }
+
+    public void WallHitingGround()
+    {
+        source.clip = wallHitingGround;
+        source.pitch = 1;
+        source.PlayOneShot(wallHitingGround);
+    }
+
+    public void RockHittingWall()
+    {
+        source.clip = wallHitingGround;
+        source.pitch = 1;
+        source.PlayOneShot(wallHitingGround);
     }
 }
