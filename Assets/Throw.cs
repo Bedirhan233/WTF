@@ -7,11 +7,17 @@ public class Throw : MonoBehaviour
     public GameObject Rock;
     public GameObject Throwspot;
     AudioManager audioManager;
+
+    int throwingCount = 0;
+
+
+    AnimationHandler animationHandler;
     public static int rock = 0;
     void Start()
     {
         rock = 0;
         audioManager = GameObject.FindObjectOfType<AudioManager>();
+        animationHandler = GetComponent<AnimationHandler>();
     }
     public void ThrowHappen()
     {
@@ -20,7 +26,18 @@ public class Throw : MonoBehaviour
         {
             Instantiate(Rock, Throwspot.transform.position, Quaternion.identity);
             rock++;
+            if(throwingCount == 0) 
+            {
+                animationHandler.isThrowing = true;
+
+            }
+            throwingCount++;
+
         }
+        
+
+
+
     }
 
     // Update is called once per frame

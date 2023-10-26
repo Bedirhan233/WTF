@@ -17,6 +17,8 @@ public class AnimationHandler : MonoBehaviour
     public bool bigCharacterWalking;
     public bool bigCharacterJumping;
 
+    public bool isThrowing;
+
     
     bool smalCharacterFalling;
     bool smalCharacterLanding;
@@ -45,9 +47,8 @@ public class AnimationHandler : MonoBehaviour
 
         SmalCharacterIsJumping();
         SmalCharacterFalling();
-
+        ThrowingAnimation();
         BigCharacterWalking();
-
         BigCharacterJumpingAnimation();
 
     }
@@ -134,6 +135,20 @@ public class AnimationHandler : MonoBehaviour
         if (!isJumping)
         {
             animator.SetBool("bigGuyJump", false);
+        }
+    }
+
+    void ThrowingAnimation()
+    {
+        if (isThrowing)
+        {
+            animator.SetBool("isThrowing", true);
+            Debug.Log("Kastar");
+        }
+
+        if (!isThrowing)
+        {
+            animator.SetBool("isThrowing", false);
         }
     }
 }
