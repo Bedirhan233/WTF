@@ -39,6 +39,7 @@ public class Menu : MonoBehaviour
     // Update is called once per frame
     public void Play()
     {
+        SceneManager.LoadScene("MainScene");
         ChooseCharacter();
        // SceneManager.LoadScene("MainScene");
     }
