@@ -15,8 +15,10 @@ public class Throw : MonoBehaviour
     }
     public void ThrowHappen()
     {
+        
         if (rock == 0)
         {
+            audioManager.PickUpStone();
             Instantiate(Rock, Throwspot.transform.position, Quaternion.identity);
             rock++;
         }
