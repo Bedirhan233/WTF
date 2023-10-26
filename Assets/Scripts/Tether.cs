@@ -60,13 +60,13 @@ public class Tether : MonoBehaviour
         
         if (distance.sqrMagnitude >= joint2d.distance*joint2d.distance-0.5f)
         {
-            ForcefieldSprite.color = new Color(255, 255, 255, 175);
-
-            //  -Forcefield.transform.right = transform.position;
+            ForcefieldSprite.color = new Color(0.23529411764705882f, 0.788235294117647f, 0.8196078431372549f, 0.5411765f);
+            
+          //  -Forcefield.transform.right = transform.position;
         }
         else
         {
-            ForcefieldSprite.color = new Color(255, 255, 255, 255);
+            ForcefieldSprite.color = new Color(0.23529411764705882f, 0.788235294117647f, 0.8196078431372549f,0.3f);
         }
         
         if (Input.GetKeyDown(KeyCode.M))
