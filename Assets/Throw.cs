@@ -7,7 +7,7 @@ public class Throw : MonoBehaviour
     public GameObject Rock;
     public GameObject Throwspot;
     AudioManager audioManager;
-    public static int rock = 0;
+    private int rock = 0;
     void Start()
     {
         rock = 0;
@@ -19,7 +19,6 @@ public class Throw : MonoBehaviour
         {
             Instantiate(Rock, Throwspot.transform.position, Quaternion.identity);
             rock++;
-            audioManager.ThnrowStone();
         }
     }
 
@@ -31,7 +30,7 @@ public class Throw : MonoBehaviour
             Debug.Log("PickUp");
         audioManager.PickUpStone();
         Destroy(other.gameObject);
-        rock=0;
+        rock--;
         }   
     }
 }
