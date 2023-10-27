@@ -421,5 +421,4 @@ MonoBehaviour:
   Throwspot: {fileID: 2468394882257395170}
   timer: 0
   animationLength: 1.5
-  timerThrow: 1.2
-  timeBetweenInstantiate: 1.2
+  timerThrow: 1.15
