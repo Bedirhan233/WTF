@@ -41,6 +41,7 @@ public class Rock : MonoBehaviour
         if(collision.gameObject.tag =="Play")
         {
             SceneManager.LoadScene(1);
+            Throw.rock = 0;
         }
     }
     // Update is called once per frame

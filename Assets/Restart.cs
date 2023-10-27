@@ -15,9 +15,12 @@ public class Restart : MonoBehaviour
     public void StartOver()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Throw.rock = 0;
     }
     public void BacktoMenu()
     {
         SceneManager.LoadScene(0);
+        Goal.necessaryForGoal = 0;
+        Throw.rock = 0;
     }
 }   
