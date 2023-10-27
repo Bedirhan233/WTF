@@ -8,9 +8,13 @@ public class Rock : MonoBehaviour
     public SpriteRenderer bigCharacter;
     Rigidbody2D rigidbody2;
     public float speed;
+    public float accelaration = 0.5f;
     Vector2 direction;
-
+    float timer;
+    float starttimer;
     public static int totalRocks;
+
+    public float timeBeforeSpeed = 1;
 
     public AudioManager audioManager;
     // Start is called before the first frame update
@@ -18,6 +22,7 @@ public class Rock : MonoBehaviour
     {
         rigidbody2 = GetComponent<Rigidbody2D>();
         totalRocks++;
+        
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -41,6 +46,8 @@ public class Rock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
+        Debug.Log(timer);
 
         if (Throw.rock == 1)
         {
@@ -52,9 +59,22 @@ public class Rock : MonoBehaviour
             {
                 direction = Vector2.left;
             }
-            Throw.rock++;
+            if (timer < timeBeforeSpeed)
+            {
+                rigidbody2.velocity = direction * accelaration;
+
+;
+            }
+
+            else if (timer > timeBeforeSpeed)
+            {
             rigidbody2.velocity = direction * speed;
+                Debug.Log("KAstar");
+                Throw.rock++;
+            }
+            
         }
+        
     }
 
 

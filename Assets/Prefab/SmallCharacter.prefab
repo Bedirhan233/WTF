@@ -57,6 +57,7 @@ MonoBehaviour:
   isFalling: 0
   bigCharacterWalking: 0
   bigCharacterJumping: 0
+  isThrowing: 0
 --- !u!212 &6124815097858793766
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -164,7 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movingSpeed: 20
   maxSpeed: 5
-  changeDirectionOnAir: 0.5
+  changeDirectionOnAir: 1
   jumpPower: 10
   jumpDown: 1
   fallGravity: 2

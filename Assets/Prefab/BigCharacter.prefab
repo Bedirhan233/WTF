@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 2468394882257395170}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.13, y: 1.14, z: -0.009175608}
+  m_LocalPosition: {x: -0.08, y: 1.41, z: -0.009175608}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -240,7 +240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movingSpeed: 20
   maxSpeed: 5
-  changeDirectionOnAir: 0.5
+  changeDirectionOnAir: 1
   jumpPower: 10
   jumpDown: 1
   fallGravity: 4
@@ -441,4 +441,4 @@ MonoBehaviour:
   Throwspot: {fileID: 2468394882257395170}
   timer: 0
   animationLength: 1.5
-  timerThrow: 1.15
+  timerThrow: 1

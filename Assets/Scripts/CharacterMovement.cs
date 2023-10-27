@@ -93,6 +93,10 @@ public class CharacterMovement : MonoBehaviour
         {
             DirectionOnAir();
         }
+        if(onGround)
+        {
+            velocity += direction * movingSpeed * Time.deltaTime;
+        }
     }
 
     private void OnEnable()

@@ -3704,7 +3704,7 @@ PrefabInstance:
     - target: {fileID: 8501471345461933551, guid: 22a66e577092d6c4dacd106a5877c647, type: 3}
       propertyPath: wallHitingGrass
       value: 
-      objectReference: {fileID: 8300000, guid: a3006d2409b50ad4286a3db19ec9da19, type: 3}
+      objectReference: {fileID: 8300000, guid: 4f01e7b9488d0914c95b8855222f5e9c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

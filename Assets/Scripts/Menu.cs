@@ -75,7 +75,6 @@ public class Menu : MonoBehaviour
         Invoke("Small.Select",0.5f);
        
         sceneIndex = scene;
-        Debug.Log(eventSystem.currentSelectedGameObject);
        
     }
     public void LoadSceneController()
