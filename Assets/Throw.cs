@@ -87,7 +87,6 @@ public class Throw : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Rock"))
         {
-            Debug.Log("PickUp");
         audioManager.PickUpStone();
         Destroy(other.gameObject);
         rock=0;

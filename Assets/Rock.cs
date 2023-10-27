@@ -41,7 +41,6 @@ public class Rock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Total rock in scene " + totalRocks);
 
         if (Throw.rock == 1)
         {

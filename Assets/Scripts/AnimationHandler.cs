@@ -144,13 +144,11 @@ public class AnimationHandler : MonoBehaviour
         {
             animator.SetBool("isThrowing", true);
             
-            Debug.Log("Kastar");
 
         }
         if (!isThrowing)
         {
             animator.SetBool("isThrowing", false);
-            Debug.Log("Stoppar");
 
         }
 
