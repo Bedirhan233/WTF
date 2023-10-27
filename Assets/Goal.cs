@@ -28,7 +28,7 @@ public class Goal : MonoBehaviour
         }
         if(Goal.necessaryForGoal==2)
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(0);
         }
     }
 }
