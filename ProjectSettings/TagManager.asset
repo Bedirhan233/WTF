@@ -12,6 +12,7 @@ TagManager:
   - Wall
   - Grass
   - Other
+  - Play
   layers:
   - Default
   - TransparentFX
