@@ -13567,8 +13567,8 @@ GameObject:
   - component: {fileID: 566192106}
   - component: {fileID: 566192105}
   - component: {fileID: 566192108}
-  m_Layer: 0
-  m_Name: flag asset (1)
+  m_Layer: 7
+  m_Name: SmallFlag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13698,7 +13698,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb298e6f4e4632346bfdb6089868bb9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: SmalGuy
 --- !u!114 &569494239 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8501471345461933551, guid: 22a66e577092d6c4dacd106a5877c647, type: 3}
@@ -17267,8 +17266,8 @@ GameObject:
   - component: {fileID: 803836296}
   - component: {fileID: 803836295}
   - component: {fileID: 803836298}
-  m_Layer: 0
-  m_Name: flag asset
+  m_Layer: 8
+  m_Name: BigFlag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17398,7 +17397,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb298e6f4e4632346bfdb6089868bb9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: BigGuy
 --- !u!1 &862141938
 GameObject:
   m_ObjectHideFlags: 0

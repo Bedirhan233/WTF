@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class Cursor : MonoBehaviour, ISelectHandler
 {
@@ -12,7 +13,8 @@ public class Cursor : MonoBehaviour, ISelectHandler
     // Start is called before the first frame update
     void Start()
     {
-       button = GetComponent<Selectable>();
+        Goal.nextScene = 3;
+        button = GetComponent<Selectable>();
             
     }
 

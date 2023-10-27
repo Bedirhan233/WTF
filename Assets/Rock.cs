@@ -43,6 +43,10 @@ public class Rock : MonoBehaviour
             SceneManager.LoadScene(1);
             Throw.rock = 0;
         }
+        if(collision.gameObject.tag =="Wall")
+        {
+            Destroy(collision.gameObject);
+        }
     }
     // Update is called once per frame
     void Update()

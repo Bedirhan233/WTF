@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 5502398232145367354}
   - component: {fileID: 2409621749829663580}
   - component: {fileID: 8125757851100556023}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SmallCharacter
   m_TagString: SmalGuy
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ DistanceJoint2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3641831685908400706}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 0}
@@ -299,6 +299,18 @@ MonoBehaviour:
         m_CallState: 1
     m_ActionId: 9ce85a33-fdd4-4083-85d3-ea3119d3265f
     m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6fc0d4fb-7e3f-4263-b81f-e176895c901a
+    m_ActionName: Player/Restart[/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 966b6dd1-9cca-4ff3-bcc4-6d37ee00ad4b
+    m_ActionName: Player/BacktoMenu[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 721a2e25-a878-44ab-980b-1162899f7afd
+    m_ActionName: UI/Restart[/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

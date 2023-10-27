@@ -6,12 +6,16 @@ using UnityEngine.SceneManagement;
 public class Goal : MonoBehaviour
 {
     // Start is called before the first frame update
-    public string character;
-    public static int necessaryForGoal;
-    bool enteredgoal = false;
+    public static int nextScene=3;
+    public static int necessaryForGoal=0;
+    public static bool smallEnteredGoal = false;
+    public static bool bigEnteredGoal = false;
+
     void Start()
     {
-        
+        smallEnteredGoal = false;
+        bigEnteredGoal=false;
+        necessaryForGoal = 0;
     }
 
     // Update is called once per frame
@@ -19,16 +23,31 @@ public class Goal : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.tag==character && enteredgoal==false)
+       
+        if (other.gameObject.tag=="SmalGuy")
         {
-            Goal.necessaryForGoal++;
-            enteredgoal = true;
+            smallEnteredGoal = true;
+          
         }
-        if(Goal.necessaryForGoal==2)
+       else if (other.gameObject.tag == "BigGuy")
         {
-            SceneManager.LoadScene(0);
+            bigEnteredGoal = true;
+           
         }
+
+        if ((smallEnteredGoal==true)&&(bigEnteredGoal==true))
+        {
+            
+            SceneManager.LoadScene(nextScene);
+            nextScene = 0;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        smallEnteredGoal=false;
+        bigEnteredGoal=false;
+
     }
 }

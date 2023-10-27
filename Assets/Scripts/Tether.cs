@@ -17,17 +17,17 @@ public class Tether : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
         Target = GameObject.FindGameObjectWithTag("SmalGuy");
-        
-        targetRb2d=Target.GetComponent<Rigidbody2D>();
+
+        targetRb2d = Target.GetComponent<Rigidbody2D>();
         rb2d = GetComponent<Rigidbody2D>();
         joint2d = GetComponent<DistanceJoint2D>();
         joint2d.connectedBody = targetRb2d;
         Forcefield = GameObject.FindGameObjectWithTag("Forcefield");
-        
+
         //Instantiate(Forcefield, Forcefield.transform.position,Quaternion.identity );
-        ForcefieldSprite=Forcefield.GetComponent<SpriteRenderer>();
+        ForcefieldSprite = Forcefield.GetComponent<SpriteRenderer>();
         //ForcefieldSprite.enabled = false;
     }
 
@@ -54,26 +54,31 @@ public class Tether : MonoBehaviour
     //}
     void Update()
     {
-        distance=Target.transform.position - transform.position;
-        Forcefield.transform.position =transform.position + distance/2;
+        distance = Target.transform.position - transform.position;
+        Forcefield.transform.position = transform.position + distance / 2;
         //Debug.Log(distance);
-        
-        if (distance.sqrMagnitude >= joint2d.distance*joint2d.distance-0.5f)
+
+        if (distance.sqrMagnitude >= joint2d.distance * joint2d.distance - 0.5f)
         {
             ForcefieldSprite.color = new Color(255, 255, 255, 150);
-            
-          //  -Forcefield.transform.right = transform.position;
+
+            //  -Forcefield.transform.right = transform.position;
         }
         else
         {
             ForcefieldSprite.color = new Color(255, 255, 255, 255);
         }
-        
+
         if (Input.GetKeyDown(KeyCode.M))
         {
-            //Magnet();
+            //Magnet(); 
         }
 
     }
-
+    public void ChangePlace(Transform small)
+    {
+        Target.transform.position = transform.position;
+        transform.position = small.position+new Vector3(0.05f, 1.2f, 0);
+       
+    }
 }

@@ -53,6 +53,7 @@ public class Menu : MonoBehaviour
     }
     public void Tutorial()
     {
+        //This is temporarily level2 and not the actual tutorial level
         ChooseCharacter(2);
     }
     public void Quit()
