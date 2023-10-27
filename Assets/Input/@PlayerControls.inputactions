@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "BacktoMenu",
+                    "type": "Button",
+                    "id": "966b6dd1-9cca-4ff3-bcc4-6d37ee00ad4b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -346,6 +355,17 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Restart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c4caccf8-bb26-4a9d-a1c7-fdffa210540a",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Big;Small",
+                    "action": "BacktoMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

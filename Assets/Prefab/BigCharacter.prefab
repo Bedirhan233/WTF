@@ -386,6 +386,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 721a2e25-a878-44ab-980b-1162899f7afd
     m_ActionName: UI/Restart[/Keyboard/r,/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4473169622859092296, guid: b063169205f7ff842bc45ca0b7c01d89, type: 3}
+        m_TargetAssemblyTypeName: Restart, Assembly-CSharp
+        m_MethodName: BacktoMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 966b6dd1-9cca-4ff3-bcc4-6d37ee00ad4b
+    m_ActionName: Player/BacktoMenu[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

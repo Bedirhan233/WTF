@@ -71,6 +71,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""BacktoMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""966b6dd1-9cca-4ff3-bcc4-6d37ee00ad4b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -368,6 +377,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Restart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c4caccf8-bb26-4a9d-a1c7-fdffa210540a"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Big;Small"",
+                    ""action"": ""BacktoMenu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1024,6 +1044,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Restart = m_Player.FindAction("Restart", throwIfNotFound: true);
+        m_Player_BacktoMenu = m_Player.FindAction("BacktoMenu", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1103,6 +1124,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Fire;
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Restart;
+    private readonly InputAction m_Player_BacktoMenu;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -1112,6 +1134,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Restart => m_Wrapper.m_Player_Restart;
+        public InputAction @BacktoMenu => m_Wrapper.m_Player_BacktoMenu;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1136,6 +1159,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Restart.started += instance.OnRestart;
             @Restart.performed += instance.OnRestart;
             @Restart.canceled += instance.OnRestart;
+            @BacktoMenu.started += instance.OnBacktoMenu;
+            @BacktoMenu.performed += instance.OnBacktoMenu;
+            @BacktoMenu.canceled += instance.OnBacktoMenu;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -1155,6 +1181,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Restart.started -= instance.OnRestart;
             @Restart.performed -= instance.OnRestart;
             @Restart.canceled -= instance.OnRestart;
+            @BacktoMenu.started -= instance.OnBacktoMenu;
+            @BacktoMenu.performed -= instance.OnBacktoMenu;
+            @BacktoMenu.canceled -= instance.OnBacktoMenu;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1359,6 +1388,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnFire(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnRestart(InputAction.CallbackContext context);
+        void OnBacktoMenu(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

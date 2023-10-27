@@ -16,4 +16,8 @@ public class Restart : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+    public void BacktoMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 }   
