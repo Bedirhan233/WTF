@@ -70,8 +70,10 @@ public class Menu : MonoBehaviour
         QuitButtonText.enabled = false;
         ChooseCharacterText.SetActive(true);
         Small.interactable = true;
-        Big.interactable = true;
+        Big.interactable = true; 
+        Cursor.position = new Vector3(-416, -176, 0) + new Vector3(0, 30, 0);
         Invoke("Small.Select",0.5f);
+       
         sceneIndex = scene;
         Debug.Log(eventSystem.currentSelectedGameObject);
        
