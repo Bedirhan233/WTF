@@ -13,16 +13,23 @@ public class Menu : MonoBehaviour
     public Button PlayButton;
     public Button TutorialButton;
     public Button QuitButton;
+    public TextMeshProUGUI PlayButtonText;
+    public TextMeshProUGUI TutorialButtonText;
+    public TextMeshProUGUI QuitButtonText;
     public static RectTransform Cursor;
     public GameObject ChooseCharacterText;
-    public Selectable Small;
+    public Button Small;
     public EventSystem eventSystem;
-    public Selectable Playbutton;
+    public Button Big;
+    public static int sceneIndex;
+    public static int controls;
 
     // Start is called before the first frame update
     private void Start()
     {
         Cursor = GetComponent<RectTransform>();
+        Big.interactable = false;
+        Small.interactable= false;
     }
     void Update()
     {
@@ -31,7 +38,7 @@ public class Menu : MonoBehaviour
 
         if (eventSystem.currentSelectedGameObject==null)
         {
-            Playbutton.Select();
+            PlayButton.Select();
             
         }
       
@@ -40,28 +47,44 @@ public class Menu : MonoBehaviour
     // Update is called once per frame
     public void Play()
     {
-        SceneManager.LoadScene("MainScene");
-        ChooseCharacter();
+            
+        ChooseCharacter(2);
        // SceneManager.LoadScene("MainScene");
     }
     public void Tutorial()
     {
-        ChooseCharacter();
+        ChooseCharacter(3);
     }
     public void Quit()
     {
         Application.Quit();
         UnityEditor.EditorApplication.isPlaying = false;
     }
-    public void ChooseCharacter()
+    public void ChooseCharacter(int scene)
     {
          PlayButton.interactable = false;
         QuitButton.interactable=false;
         TutorialButton.interactable=false;
+        PlayButtonText.enabled = false;
+        TutorialButtonText.enabled = false;
+        QuitButtonText.enabled = false;
         ChooseCharacterText.SetActive(true);
-        Small.Select();
+        Small.interactable = true;
+        Big.interactable = true;
+        Invoke("Small.Select",0.5f);
+        sceneIndex = scene;
         Debug.Log(eventSystem.currentSelectedGameObject);
-        
+       
     }
+    public void LoadSceneController()
+    {
+        SceneManager.LoadScene(sceneIndex);
+        controls = 0;
 
+    }
+    public void LoadSceneSplit()
+    {
+        SceneManager.LoadScene(sceneIndex);
+        controls = 1;
+    }
 }
