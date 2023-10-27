@@ -48,17 +48,17 @@ public class Menu : MonoBehaviour
     public void Play()
     {
             
-        ChooseCharacter(2);
+        ChooseCharacter(1);
        // SceneManager.LoadScene("MainScene");
     }
     public void Tutorial()
     {
-        ChooseCharacter(3);
+        ChooseCharacter(2);
     }
     public void Quit()
     {
         Application.Quit();
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
     }
     public void ChooseCharacter(int scene)
     {
