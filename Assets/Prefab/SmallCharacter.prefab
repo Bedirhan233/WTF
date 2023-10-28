@@ -117,13 +117,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3641831685908400706}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3fab67cdffc5fe40ac9d7dd4b97ee78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tetherDistance: 5
   Forcefield: {fileID: 1055131446993411773, guid: b404c054e30ee4a499e9f8aa7f3582c3, type: 3}
+  PortalVisual: {fileID: 0}
 --- !u!50 &417128776132569703
 Rigidbody2D:
   serializedVersion: 4
@@ -170,10 +171,7 @@ MonoBehaviour:
   jumpDown: 1
   fallGravity: 2
   jumpGravity: 1
-  ActiveControlScheme:
-    m_Name: 
-    m_BindingGroup: 
-    m_DeviceRequirements: []
+  StartPosition: {fileID: 7971175000566855222, guid: 148afe71d0dc5174e9f6f8c090db07a2, type: 3}
 --- !u!232 &423458936095069665
 DistanceJoint2D:
   m_ObjectHideFlags: 0

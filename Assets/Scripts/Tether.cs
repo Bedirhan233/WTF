@@ -13,6 +13,7 @@ public class Tether : MonoBehaviour
     bool magnet;
     Vector3 distance;
     public GameObject Forcefield;
+    public GameObject PortalVisual;
     SpriteRenderer ForcefieldSprite;
     // Start is called before the first frame update
     void Start()
@@ -79,6 +80,7 @@ public class Tether : MonoBehaviour
     {
         Target.transform.position = transform.position;
         transform.position = small.position+new Vector3(0.05f, 1.2f, 0);
-       
+        Instantiate(PortalVisual, transform.position, Quaternion.identity);
+        Instantiate(PortalVisual, Target.transform.position, Quaternion.identity);
     }
 }
