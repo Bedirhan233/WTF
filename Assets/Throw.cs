@@ -83,14 +83,5 @@ public class Throw : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Rock"))
-        {
-        audioManager.PickUpStone();
-        Destroy(other.gameObject);
-        rock=0;
-           
-        }   
-    }
+
 }

@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 5502398232145367354}
   - component: {fileID: 2409621749829663580}
   - component: {fileID: 8125757851100556023}
+  - component: {fileID: 5891752672189404688}
   m_Layer: 6
   m_Name: SmallCharacter
   m_TagString: SmalGuy
@@ -171,7 +172,6 @@ MonoBehaviour:
   jumpDown: 1
   fallGravity: 2
   jumpGravity: 1
-  StartPosition: {fileID: 7971175000566855222, guid: 148afe71d0dc5174e9f6f8c090db07a2, type: 3}
 --- !u!232 &423458936095069665
 DistanceJoint2D:
   m_ObjectHideFlags: 0
@@ -380,3 +380,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.30780792, y: 0.8253841}
   m_EdgeRadius: 0
+--- !u!114 &5891752672189404688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3641831685908400706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61889083c1f2c0d4590e6ee9d9156b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

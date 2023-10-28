@@ -45,11 +45,13 @@ public class CharacterMovement : MonoBehaviour
      GameObject StartPosition;
     private void Awake()
     {
-        playerControls= new PlayerControls();
+        
+        playerControls = new PlayerControls();
         StartPosition = GameObject.FindGameObjectWithTag("Start");
     }
     void Start()
     {
+       
         animationHandler = GetComponent<AnimationHandler>();    
         transform.position = StartPosition.transform.position;
         Physics2D.queriesStartInColliders = false;

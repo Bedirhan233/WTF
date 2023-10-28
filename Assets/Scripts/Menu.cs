@@ -22,7 +22,7 @@ public class Menu : MonoBehaviour
     public EventSystem eventSystem;
     public Button Big;
     public static int sceneIndex;
-    public static int controls;
+    
 
     // Start is called before the first frame update
     private void Start()
@@ -81,13 +81,13 @@ public class Menu : MonoBehaviour
     public void LoadSceneController()
     {
         SceneManager.LoadScene(sceneIndex);
-        controls = 0;
+       
 
     }
     public void LoadSceneSplit()
     {
         SceneManager.LoadScene(sceneIndex);
-        controls = 1;
+        
     }
     void Selection()
     {

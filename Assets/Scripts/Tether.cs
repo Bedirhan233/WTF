@@ -56,7 +56,11 @@ public class Tether : MonoBehaviour
     void Update()
     {
         distance = Target.transform.position - transform.position;
-        Forcefield.transform.position = transform.position + distance / 2;
+        if(Forcefield != null)
+        {
+            Forcefield.transform.position = transform.position + distance / 2;
+       
+     
         //Debug.Log(distance);
 
         if (distance.sqrMagnitude >= joint2d.distance * joint2d.distance - 0.5f)
@@ -69,7 +73,7 @@ public class Tether : MonoBehaviour
         {
             ForcefieldSprite.color = new Color(255, 255, 255, 255);
         }
-
+ }
         if (Input.GetKeyDown(KeyCode.M))
         {
             //Magnet(); 

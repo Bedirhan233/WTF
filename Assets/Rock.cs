@@ -26,7 +26,7 @@ public class Rock : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (rigidbody2 == null)
+        if (rigidbody2 == null || collision.gameObject.CompareTag("BigGuy"))
         {
             return; 
         }   
