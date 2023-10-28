@@ -13,7 +13,7 @@ public class Rock : MonoBehaviour
     float timer;
     float starttimer;
     public static int totalRocks;
-
+    public static float timePassed;
     public float timeBeforeSpeed = 1;
 
     public AudioManager audioManager;
@@ -22,6 +22,7 @@ public class Rock : MonoBehaviour
     {
         rigidbody2 = GetComponent<Rigidbody2D>();
         totalRocks++;
+        timePassed = Time.time;
         
     }
     private void OnCollisionEnter2D(Collision2D collision)

@@ -245,7 +245,6 @@ MonoBehaviour:
   jumpDown: 1
   fallGravity: 4
   jumpGravity: 1
-  StartPosition: {fileID: 7971175000566855222, guid: 148afe71d0dc5174e9f6f8c090db07a2, type: 3}
 --- !u!114 &3493714585827180827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,4 +454,4 @@ MonoBehaviour:
   Throwspot: {fileID: 2468394882257395170}
   timer: 0
   animationLength: 1.5
-  timerThrow: 1
+  timerThrow: 0.3
