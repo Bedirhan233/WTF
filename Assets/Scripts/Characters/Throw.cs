@@ -15,6 +15,7 @@ public class Throw : MonoBehaviour
     public float animationLength = 5;
     public float timerThrow = 7;
 
+    bool itNowExists=false;
 
     int totalRock;
 
@@ -29,58 +30,62 @@ public class Throw : MonoBehaviour
     }
     public void ThrowHappen()
     {
-        
+
         if (rock == 0)
         {
-            rock++;
+            
             throwing = true;
 
 
         }
 
+
+
+        animationHandler.isThrowing = true;
+
+
         
-        
 
-
-
-    }
-    private void Update()
-    {
-         
-        if(throwing) 
+        if (rock < 1)
         {
-            timer += Time.deltaTime;
-            
-
-            if(timer < animationLength)
-            {
-                animationHandler.isThrowing = true;
-            }
-            if (timer > timerThrow)
-            {
-                
-                if(Rock.totalRocks < 1) 
-                {
-                Instantiate(rockObject, Throwspot.transform.position, Quaternion.identity);
-                    audioManager.ThrowUpStone();
-                }
-               
-
-                
-            }
-            if ( timer > animationLength)
-            {
-                throwing = false;
-                animationHandler.isThrowing = false;
-                timer = 0;
-                Rock.totalRocks = 0;
-
-            }
-
-            
+            Instantiate(rockObject, Throwspot.transform.position, Quaternion.identity);
+            itNowExists = true;
+            audioManager.ThrowUpStone();
+            rock++;
 
         }
 
+
+
+
+        if (itNowExists)
+        {
+            throwing = false;
+            animationHandler.isThrowing = false;
+            timer = 0;
+            
+            Rock.totalRocks = 0;
+
+        }
+
+    }
+
+    
+
+
+
+
+
+
+
+    private void Update()
+    {
+
+        if (throwing)
+        {
+            timer += Time.deltaTime;
+
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -90,6 +95,7 @@ public class Throw : MonoBehaviour
             audioManager.PickUpStone();
             Destroy(other.gameObject);
             Throw.rock = 0;
+            itNowExists = false;    
 
         }
     }

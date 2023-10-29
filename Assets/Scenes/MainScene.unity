@@ -230,10 +230,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cd16d9e66c1694ea1846af46dd2977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 2049351885}
   smoothing: 5
   maxPos: {x: 200, y: 200}
   minPos: {x: -100, y: -11.69}
+  onCharacter: 0
+  isSmall: 0
 --- !u!114 &387985753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29134,11 +29135,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b404c054e30ee4a499e9f8aa7f3582c3, type: 3}
---- !u!1 &2049351885 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1055131446993411773, guid: b404c054e30ee4a499e9f8aa7f3582c3, type: 3}
-  m_PrefabInstance: {fileID: 2036999137}
-  m_PrefabAsset: {fileID: 0}
 --- !u!212 &2049351886 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 165992069552998698, guid: b404c054e30ee4a499e9f8aa7f3582c3, type: 3}

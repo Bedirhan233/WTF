@@ -7,12 +7,18 @@ public class Separator : MonoBehaviour
     bool separatorActivated = false;
     DistanceJoint2D distanceJoint;
     public GameObject Forcefield;
-    public GameObject BigGuy;
-    public SpriteRenderer spriteRendererForce;
+    GameObject BigGuy;
+    SpriteRenderer spriteRendererForce;
     SpriteRenderer spriteRendererSeparator;
     BoxCollider2D boxCollider2D;
+    public Sprite SpriteOn;
+    public Sprite SpriteOff;
     float timer;
-    public float timeSeparated = 5;
+    public float timeSeparated = 10;
+    [Header("Cameras")]
+    public Camera MainCamera;
+    public Camera BigCamera;
+    public Camera SmallCamera;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,34 +36,43 @@ public class Separator : MonoBehaviour
             distanceJoint.enabled = false;
             spriteRendererForce.enabled = false;
             boxCollider2D.enabled = false;
-            spriteRendererSeparator.color = new Color(0.7f, 0.4f, 0.2f);
+            MainCamera.enabled = false;
+            BigCamera.enabled = true;
+            SmallCamera.enabled = true;
+            spriteRendererSeparator.sprite = SpriteOff;
         }
 
     }
 
 
-    
+
     private void Update()
-       
+
     {
         if (distanceJoint != null)
         {
 
-       
-        if(Time.time-timer>timeSeparated && distanceJoint.enabled==false)
-        {
-           
-            boxCollider2D.enabled = true;
-            distanceJoint.enabled = true;
-            spriteRendererForce.enabled = true;
-            separatorActivated = false;
-        }
+
+            if (Time.time - timer > timeSeparated && distanceJoint.enabled == false)
+            {
+
+                boxCollider2D.enabled = true;
+                distanceJoint.enabled = true;
+                spriteRendererForce.enabled = true;
+                separatorActivated = false;
+
+                MainCamera.enabled = true;
+                BigCamera.enabled = false;
+                SmallCamera.enabled = false;
+                spriteRendererSeparator.sprite = SpriteOn;
+
+            }
         }
     }
     void LookFor()
     {
-       BigGuy = GameObject.FindGameObjectWithTag("BigGuy");
-         distanceJoint= BigGuy.GetComponent<DistanceJoint2D>();
+        BigGuy = GameObject.FindGameObjectWithTag("BigGuy");
+        distanceJoint = BigGuy.GetComponent<DistanceJoint2D>();
         spriteRendererForce = Forcefield.GetComponent<SpriteRenderer>();
     }
 }
