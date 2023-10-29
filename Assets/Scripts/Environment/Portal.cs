@@ -9,7 +9,7 @@ public class Portal : MonoBehaviour
     bool portalOn;
     void Start()
     {
-        Invoke("LookFor", 0.5f);
+        Invoke(nameof(LookFor), 0.5f);
         portalOn = true;
     }
 
@@ -20,7 +20,7 @@ public class Portal : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag=="SmalGuy"&&portalOn)
+        if(other.gameObject.CompareTag("SmallGuy")&&portalOn)
         {
             BigGuy.transform.position = other.transform.position;
             portalOn = false;

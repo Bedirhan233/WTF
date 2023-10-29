@@ -7,11 +7,11 @@ public class AnimationHandler : MonoBehaviour
     Animator animator;
     
 
-    public bool smalCharacterWalking;
+    public bool smallCharacterWalking;
     public bool isJumping;
     public bool isFalling;
-
-    bool smalCharacter;
+    //public bool isWalking;
+    bool smallCharacter;
     bool bigCharacter;
 
     public bool bigCharacterWalking;
@@ -20,8 +20,8 @@ public class AnimationHandler : MonoBehaviour
     public bool isThrowing;
 
     
-    bool smalCharacterFalling;
-    bool smalCharacterLanding;
+    bool smallCharacterFalling;
+    bool smallCharacterLanding;
 
     // Start is called before the first frame update
     void Start()
@@ -32,35 +32,36 @@ public class AnimationHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(gameObject.tag == "SmalGuy")
+        if(gameObject.CompareTag("SmallGuy"))
         {
-        SmalCharacterWalkingAnimation();
-
+        SmallCharacterWalkingAnimation();
+            SmallCharacterIsJumping();
+            SmallCharacterFalling();
         }
 
-        if(gameObject.tag == "BigGuy")
+        if(gameObject.CompareTag("BigGuy"))
         {
             BigCharacterWalkingAnimation();
+            ThrowingAnimation();
+            BigCharacterWalking();
+            BigCharacterJumpingAnimation();
         }
 
 
-        ThrowingAnimation();
-        SmalCharacterIsJumping();
-        SmalCharacterFalling();
-        BigCharacterWalking();
-        BigCharacterJumpingAnimation();
+        
+        
 
     }
 
-    void SmalCharacterWalkingAnimation()
+    void SmallCharacterWalkingAnimation()
     {
 
-        if(smalCharacterWalking) 
+        if(smallCharacterWalking) 
         { 
         animator.SetBool("IsWalking", true);
         }
         
-        if (!smalCharacterWalking)
+        if (!smallCharacterWalking)
         {
             animator.SetBool("IsWalking", false);
         }
@@ -69,21 +70,21 @@ public class AnimationHandler : MonoBehaviour
     void BigCharacterWalkingAnimation()
     {
 
-        if (smalCharacterWalking)
+        if (smallCharacterWalking)
         {
-            animator.SetBool("IsWalking", true);
+            animator.SetBool("BigGuyWalking", true);
         }
 
-        if (!smalCharacterWalking)
+        if (!smallCharacterWalking)
         {
-            animator.SetBool("IsWalking", false);
+            animator.SetBool("BigGuyWalking", false);
         }
 
     }
 
     
 
-    void SmalCharacterIsJumping()
+    void SmallCharacterIsJumping()
     {
         if(isJumping) 
         {
@@ -99,7 +100,7 @@ public class AnimationHandler : MonoBehaviour
         }
     }
 
-    void SmalCharacterFalling()
+    void SmallCharacterFalling()
     {
         if(isFalling) 
         {

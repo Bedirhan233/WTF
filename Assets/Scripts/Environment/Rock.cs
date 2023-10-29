@@ -34,17 +34,17 @@ public class Rock : MonoBehaviour
         else
           rigidbody2.gravityScale = 2;
 
-        if(collision.gameObject.tag == "Other")
+        if(collision.gameObject.CompareTag("Other"))
         {
             audioManager.WallHittingGrass();
             
         }
-        if(collision.gameObject.tag =="Play")
+        if(collision.gameObject.CompareTag("Play"))
         {
             SceneManager.LoadScene(1);
             Throw.rock = 0;
         }
-        if(collision.gameObject.tag =="Wall")
+        if(collision.gameObject.CompareTag("Wall"))
         {
             Destroy(collision.gameObject);
         }
@@ -53,7 +53,7 @@ public class Rock : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        Debug.Log(timer);
+        
 
         if (Throw.rock == 1)
         {
@@ -75,7 +75,7 @@ public class Rock : MonoBehaviour
             else if (timer > timeBeforeSpeed)
             {
             rigidbody2.velocity = direction * speed;
-                Debug.Log("KAstar");
+                
                 Throw.rock++;
             }
             

@@ -6,14 +6,13 @@ using UnityEngine.InputSystem;
 public class CharacterMovement : MonoBehaviour
 {
     AnimationHandler animationHandler;
+    AudioManager audioManager;
+    SpriteRenderer spriteRenderer;
+    Rigidbody2D rb2;
+
     Vector3 velocity;
     Vector3 direction;
 
-    AudioManager audioManager;
-
-    SpriteRenderer spriteRenderer;
-  
-   
     bool checkGround1;
     bool checkGround2;
     bool checkGround3;
@@ -22,7 +21,7 @@ public class CharacterMovement : MonoBehaviour
 
     public static bool lookingRight;
 
-    [Header ("Speed")]
+    [Header("Speed")]
     public float movingSpeed = 100;
     public float maxSpeed = 10;
 
@@ -37,22 +36,21 @@ public class CharacterMovement : MonoBehaviour
 
     float groundCheckLength;
 
-    Rigidbody2D rb2;
+
 
     public PlayerControls playerControls;
-    private InputAction move;
-    private InputAction jump;
-     GameObject StartPosition;
+   
+    GameObject StartPosition;
     private void Awake()
     {
-        
+
         playerControls = new PlayerControls();
         StartPosition = GameObject.FindGameObjectWithTag("Start");
     }
     void Start()
     {
-       
-        animationHandler = GetComponent<AnimationHandler>();    
+
+        animationHandler = GetComponent<AnimationHandler>();
         transform.position = StartPosition.transform.position;
         Physics2D.queriesStartInColliders = false;
         rb2 = GetComponent<Rigidbody2D>();
@@ -65,7 +63,7 @@ public class CharacterMovement : MonoBehaviour
 
         audioManager = FindAnyObjectByType<AudioManager>();
 
-        
+
     }
 
     // Update is called once per frame
@@ -77,14 +75,14 @@ public class CharacterMovement : MonoBehaviour
 
         AnimationHandler();
 
-        
+
 
         //Movement();
     }
 
     private void MovingWithScript()
     {
-        velocity += direction * movingSpeed * Time.deltaTime;
+        velocity += movingSpeed* Time.deltaTime*direction;
         rb2.velocity = new Vector2(velocity.x, rb2.velocity.y);
         velocity.x = Mathf.Clamp(velocity.x, -maxSpeed, maxSpeed);
 
@@ -96,25 +94,15 @@ public class CharacterMovement : MonoBehaviour
         {
             DirectionOnAir();
         }
-        if(onGround)
+        if (onGround)
         {
-            velocity += direction * movingSpeed * Time.deltaTime;
+            velocity += movingSpeed * Time.deltaTime * direction;
         }
     }
 
-    private void OnEnable()
-    {
-        move = playerControls.Player.Move;
-        jump = playerControls.Player.Jump;
-        move.Enable();
-        jump.Enable();
-        //jump.performed += JumpingManagement;
-    }
-    private void OnDisable()
-    {
-        move.Disable();
-        jump.Disable(); 
-    }
+  
+    
+
     private void CreatingRaycast()
     {
         Vector3 start = transform.position;
@@ -138,7 +126,7 @@ public class CharacterMovement : MonoBehaviour
     public void Movement(InputAction.CallbackContext context)
     {
         direction = context.ReadValue<Vector2>();
-        
+
 
     }
 
@@ -148,10 +136,10 @@ public class CharacterMovement : MonoBehaviour
         // går åt vänster
         if (velocity.x > 0)
         {
-            animationHandler.smalCharacterWalking = true;
+            animationHandler.smallCharacterWalking = true;
             animationHandler.bigCharacterWalking = true;
             spriteRenderer.flipX = false;
-            lookingRight = false;   
+            lookingRight = false;
 
         }
 
@@ -159,7 +147,7 @@ public class CharacterMovement : MonoBehaviour
 
         if (velocity.x < 0)
         {
-            animationHandler.smalCharacterWalking = true;
+            animationHandler.smallCharacterWalking = true;
             animationHandler.bigCharacterWalking = true;
             spriteRenderer.flipX = true;
             lookingRight = true;
@@ -170,7 +158,7 @@ public class CharacterMovement : MonoBehaviour
         // står still
         if (direction.x == 0)
         {
-            animationHandler.smalCharacterWalking = false;
+            animationHandler.smallCharacterWalking = false;
             animationHandler.bigCharacterWalking = false;
         }
 
@@ -214,14 +202,14 @@ public class CharacterMovement : MonoBehaviour
     private void DirectionOnAir()
     {
         direction.x *= changeDirectionOnAir;
-        
+
     }
 
     public void JumpingManagement(InputAction.CallbackContext context)
     {
 
-        if(context.started)
-        { 
+        if (context.started)
+        {
             if (onGround)
             {
                 rb2.velocity = new Vector2(velocity.x, jumpPower);
@@ -229,16 +217,16 @@ public class CharacterMovement : MonoBehaviour
 
 
 
-            if(gameObject.tag == "SmalGuy" && onGround)
+            if (gameObject.CompareTag("SmallGuy") && onGround)
             {
-                audioManager.SmalGuyJumpingSound();
+                audioManager.SmallGuyJumpingSound();
 
             }
 
-            if(gameObject.tag == "BigGuy" && onGround)
+            if (gameObject.CompareTag("BigGuy") && onGround)
             {
                 audioManager.BigGuyJumpingSound();
-                
+
             }
 
 

@@ -26,12 +26,12 @@ public class Goal : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other)
     {
        
-        if (other.gameObject.tag=="SmalGuy")
+        if (other.gameObject.CompareTag("SmallGuy"))
         {
             smallEnteredGoal = true;
           
         }
-       else if (other.gameObject.tag == "BigGuy")
+       else if (other.gameObject.CompareTag("BigGuy"))
         {
             bigEnteredGoal = true;
            
@@ -39,9 +39,12 @@ public class Goal : MonoBehaviour
 
         if ((smallEnteredGoal==true)&&(bigEnteredGoal==true))
         {
-            
-            SceneManager.LoadScene(nextScene);
-            nextScene = 0;
+            if(SceneManager.GetActiveScene().buildIndex==3)
+            SceneManager.LoadScene(0);
+            else if (SceneManager.GetActiveScene().buildIndex == 1)
+             {
+                SceneManager.LoadScene(3);
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

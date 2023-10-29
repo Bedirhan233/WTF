@@ -14,7 +14,7 @@ public class Throw : MonoBehaviour
 
     public float animationLength = 5;
     public float timerThrow = 7;
-    bool canThrow = false;
+
 
     int totalRock;
 

@@ -10,40 +10,49 @@ public class Separator : MonoBehaviour
     public GameObject BigGuy;
     public SpriteRenderer spriteRendererForce;
     SpriteRenderer spriteRendererSeparator;
+    BoxCollider2D boxCollider2D;
+    float timer;
+    public float timeSeparated = 5;
     // Start is called before the first frame update
     void Start()
     {
         spriteRendererSeparator = GetComponent<SpriteRenderer>();
-        Invoke("LookFor", 0.5f);
+        boxCollider2D = GetComponent<BoxCollider2D>();
+        Invoke(nameof(LookFor), 0.5f);
     }
 
     // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(separatorActivated==false)
+        timer = Time.time;
+        if (separatorActivated == false)
         {
             distanceJoint.enabled = false;
-            spriteRendererForce.enabled=false;
-        }
-        else if (separatorActivated==true) 
-        {
-            distanceJoint.enabled = true;
-            spriteRendererForce.enabled = true;
-        }
-        
-    }
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (separatorActivated==true)
-        {
-            spriteRendererSeparator.color = new Color(0.2f, 0.7f, 0.3f);
-        }
-        else if(separatorActivated==false)
-        {
+            spriteRendererForce.enabled = false;
+            boxCollider2D.enabled = false;
             spriteRendererSeparator.color = new Color(0.7f, 0.4f, 0.2f);
         }
-        separatorActivated =!separatorActivated;
 
+    }
+
+
+    
+    private void Update()
+       
+    {
+        if (distanceJoint != null)
+        {
+
+       
+        if(Time.time-timer>timeSeparated && distanceJoint.enabled==false)
+        {
+           
+            boxCollider2D.enabled = true;
+            distanceJoint.enabled = true;
+            spriteRendererForce.enabled = true;
+            separatorActivated = false;
+        }
+        }
     }
     void LookFor()
     {

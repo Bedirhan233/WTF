@@ -26842,8 +26842,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerA: {fileID: 3641831685908400706, guid: 81d2b06ca935f1942909f9eeca8125a9, type: 3}
   playerB: {fileID: 8610488033151329511, guid: 4122c15066c56644aad5e8be7e966e68, type: 3}
-  playerPrefabB: {fileID: 8610488033151329511, guid: 4122c15066c56644aad5e8be7e966e68, type: 3}
-  Forcefield: {fileID: 0}
+  Forcefield: {fileID: 2049351886}
 --- !u!1 &1880264427
 GameObject:
   m_ObjectHideFlags: 0
@@ -29129,7 +29128,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Forcefield (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -1376272317253617818, guid: b404c054e30ee4a499e9f8aa7f3582c3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -29137,6 +29137,11 @@ PrefabInstance:
 --- !u!1 &2049351885 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1055131446993411773, guid: b404c054e30ee4a499e9f8aa7f3582c3, type: 3}
+  m_PrefabInstance: {fileID: 2036999137}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &2049351886 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 165992069552998698, guid: b404c054e30ee4a499e9f8aa7f3582c3, type: 3}
   m_PrefabInstance: {fileID: 2036999137}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2071160752

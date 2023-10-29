@@ -10,7 +10,7 @@ public class Restart : MonoBehaviour
     GameObject big;
     void Start()
     {
-        small = GameObject.FindGameObjectWithTag("SmalGuy");
+        small = GameObject.FindGameObjectWithTag("SmallGuy");
         big = GameObject.FindGameObjectWithTag("BigGuy");
     }
 

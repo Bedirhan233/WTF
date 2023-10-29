@@ -9,14 +9,14 @@ public class AudioManager : MonoBehaviour
     public AudioSource source;
     public AudioSource source2;
 
-    public AudioClip smalJumping, bigJumping, smalWalking, stoneHitWall, bigThrowing, pickUp, backgroundMusic, wallHitingGrass;
+    public AudioClip SmallJumping, bigJumping, SmallWalking, stoneHitWall, bigThrowing, pickUp, backgroundMusic, wallHitingGrass;
 
     public float jumpingSound = 1;
     public float backgroundMUsicVolume = 1;
 
 
 
-    bool playingSmalJump;
+    private bool playingSmallJump;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,15 +26,15 @@ public class AudioManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playingSmalJump = false;
+        playingSmallJump = false;
         source2.volume = backgroundMUsicVolume;
     }
 
 
 
-    public void SmalGuyJumpingSound()
+    public void SmallGuyJumpingSound()
     {
-        source.clip = smalJumping;
+        source.clip = SmallJumping;
         source.pitch = 1f;
         source.volume = jumpingSound;
         source.Play();

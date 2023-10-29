@@ -10,12 +10,12 @@ public class PlayerController : MonoBehaviour
     public GameObject playerB;
     
     public SpriteRenderer Forcefield;
-    private int i = 0;  
-    PlayerInputManager playerInputManager;
+    
+    //PlayerInputManager playerInputManager;
 
     void Start()
     {
-        playerInputManager = GetComponent<PlayerInputManager>();
+        //playerInputManager = GetComponent<PlayerInputManager>();
         OnPlayerJoined();
     }
   
@@ -39,12 +39,12 @@ public class PlayerController : MonoBehaviour
             var player2 = PlayerInput.Instantiate(playerB, controlScheme: "Gamepad", pairWithDevice: Gamepad.all[1]);
            
         }
-         Invoke("ForcefieldEnabled", 0.1f);
+        // Invoke(nameof(ForcefieldEnabled), 0.1f);
         
-        void ForcefieldEnabled()
-            {
-            Forcefield.enabled = true;
-        }
+        //void ForcefieldEnabled()
+        //    {
+        //    Forcefield.enabled = true;
+        //}
 
 
 
