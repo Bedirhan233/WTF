@@ -14,6 +14,8 @@ TagManager:
   - Play
   - Start
   - SmallGuy
+  - Small
+  - Big
   layers:
   - Default
   - TransparentFX

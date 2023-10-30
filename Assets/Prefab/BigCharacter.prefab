@@ -66,7 +66,7 @@ Transform:
   m_GameObject: {fileID: 8610488033151329511}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.781679, y: -9.160591, z: 0.8990559}
+  m_LocalPosition: {x: 15.788707, y: -9.160591, z: 0.8990559}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -417,7 +417,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tetherDistance: 5
   Forcefield: {fileID: 1055131446993411773, guid: b404c054e30ee4a499e9f8aa7f3582c3, type: 3}
-  PortalVisual: {fileID: 6413044835667143870, guid: 768b0c08411bdfa429ed4f3bd22c8951, type: 3}
 --- !u!232 &727244488100857938
 DistanceJoint2D:
   m_ObjectHideFlags: 0

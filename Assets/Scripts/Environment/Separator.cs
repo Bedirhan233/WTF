@@ -14,11 +14,15 @@ public class Separator : MonoBehaviour
     public Sprite SpriteOn;
     public Sprite SpriteOff;
     float timer;
-    public float timeSeparated = 10;
+    public float timeSeparated = 25;
     [Header("Cameras")]
     public Camera MainCamera;
     public Camera BigCamera;
     public Camera SmallCamera;
+    public GameObject ArrowSmall;
+    public GameObject ArrowBig;
+    GameObject SmallArrow;
+    GameObject BigArrow;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +44,8 @@ public class Separator : MonoBehaviour
             BigCamera.enabled = true;
             SmallCamera.enabled = true;
             spriteRendererSeparator.sprite = SpriteOff;
+            SmallArrow = Instantiate(ArrowSmall, transform.position, ArrowSmall.transform.rotation);
+            BigArrow = Instantiate(ArrowBig, transform.position, ArrowBig.transform.rotation);
         }
 
     }
@@ -65,7 +71,8 @@ public class Separator : MonoBehaviour
                 BigCamera.enabled = false;
                 SmallCamera.enabled = false;
                 spriteRendererSeparator.sprite = SpriteOn;
-
+                Destroy(SmallArrow); 
+                Destroy(BigArrow);
             }
         }
     }
