@@ -40,9 +40,10 @@ public class Separator : MonoBehaviour
             distanceJoint.enabled = false;
             spriteRendererForce.enabled = false;
             boxCollider2D.enabled = false;
-            MainCamera.enabled = false;
+           
             BigCamera.enabled = true;
             SmallCamera.enabled = true;
+            MainCamera.enabled = false;
             spriteRendererSeparator.sprite = SpriteOff;
             SmallArrow = Instantiate(ArrowSmall, transform.position, ArrowSmall.transform.rotation);
             BigArrow = Instantiate(ArrowBig, transform.position, ArrowBig.transform.rotation);
